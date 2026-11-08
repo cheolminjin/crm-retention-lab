@@ -1,0 +1,257 @@
+{
+  "design_version": "0.1.0",
+  "status": "design_only_not_executable_pipeline_config",
+  "project_slug": "crm-retention-lab",
+  "data_origin": "fully_synthetic",
+  "timezone": "Asia/Seoul",
+  "currency": "KRW",
+  "assumptions_are_not_market_benchmarks": true,
+  "population": {
+    "first_delivery_customers": 20,
+    "first_delivery_start_inclusive": "2025-01-01T00:00:00+09:00",
+    "first_delivery_end_exclusive": "2025-07-01T00:00:00+09:00",
+    "observation_end_exclusive": "2025-07-01T00:00:00+09:00",
+    "one_sku_per_order": true,
+    "first_delivery_daily_slot_local": "09:00:00",
+    "operational_reporting_lag_days": 0,
+    "max_analytics_reporting_lag_days": 7,
+    "max_order_adjustment_recording_days_after_payment": 30
+  },
+  "experiment": {
+    "anchor": "first_order_delivered_at",
+    "assignment_offset_days": 14,
+    "randomization_unit": "customer_id",
+    "max_assignments_per_customer": 1,
+    "arms": [
+      {
+        "id": "control",
+        "probability": 0.3333333333333333
+      },
+      {
+        "id": "info",
+        "probability": 0.3333333333333333
+      },
+      {
+        "id": "coupon",
+        "probability": 0.3333333333333333
+      }
+    ],
+    "outcome_horizon_days": 60,
+    "settlement_lag_days": 30,
+    "interval_convention": "start_inclusive_end_exclusive",
+    "primary_outcome": "contribution_profit_60d_krw",
+    "analysis_principle": "intention_to_treat"
+  },
+  "offer": {
+    "channel": "email",
+    "attempts_per_customer": 1,
+    "send_cost_krw_per_attempt": 20,
+    "coupon_discount_krw": 3000,
+    "coupon_min_list_subtotal_krw": 25000,
+    "coupon_valid_days": 14,
+    "coupon_max_redemptions": 1,
+    "allow_stacking": false,
+    "info_content_shared_between_active_arms": true
+  },
+  "catalog": [
+    {
+      "sku": "coffee_200g",
+      "grams": 200,
+      "list_price_krw": 14000,
+      "unit_cogs_krw": 5500
+    },
+    {
+      "sku": "coffee_500g",
+      "grams": 500,
+      "list_price_krw": 28000,
+      "unit_cogs_krw": 12000
+    },
+    {
+      "sku": "coffee_1000g",
+      "grams": 1000,
+      "list_price_krw": 49000,
+      "unit_cogs_krw": 23000
+    }
+  ],
+  "unit_economics": {
+    "outbound_shipping_krw_per_order": 3000,
+    "fulfillment_krw_per_order": 700,
+    "customer_shipping_charge_krw": 3000,
+    "free_shipping_min_subtotal_krw": 40000,
+    "shipping_threshold_basis": "pre_coupon_subtotal",
+    "payment_fee_rate": 0.025,
+    "payment_fee_basis": "initial_collected_payment_including_shipping",
+    "payment_fee_recovered_on_refund": false,
+    "return_handling_krw_per_return": 3000
+  },
+  "policy_constraints": {
+    "rollout_eligible_customers": 10000,
+    "budget_reservation_cap_krw_per_10000": 3000000,
+    "max_contact_fraction": 0.3,
+    "coupon_budget_reservation": "full_face_value_plus_send_cost",
+    "fixed_setup_cost_krw_per_rollout": 100000,
+    "fixed_setup_cost_trigger": "at_least_one_contact_in_rollout",
+    "reservation_budget_scope": "variable_cost_only_fixed_setup_is_separate",
+    "allocation_batch": "same_assigned_at_daily_slot",
+    "batch_caps": "proportional_to_batch_eligible_count_floor_integer_limits"
+  },
+  "splits": {
+    "timestamp_column": "assigned_at",
+    "train": {
+      "start_inclusive": "2025-01-15T00:00:00+09:00",
+      "end_exclusive": "2025-07-01T00:00:00+09:00"
+    },
+    "train_labels_available_by": "2025-10-01T00:00:00+09:00",
+    "validation": {
+      "start_inclusive": "2025-10-01T00:00:00+09:00",
+      "end_exclusive": "2025-12-01T00:00:00+09:00"
+    },
+    "policy_lock_at": "2026-03-01T00:00:00+09:00",
+    "final_test": {
+      "start_inclusive": "2026-03-01T00:00:00+09:00",
+      "end_exclusive": "2026-05-01T00:00:00+09:00"
+    },
+    "final_readout_at": "2026-08-01T00:00:00+09:00",
+    "monitoring_only": {
+      "start_inclusive": "2026-05-01T00:00:00+09:00",
+      "end_exclusive": "2026-08-01T00:00:00+09:00"
+    },
+    "unlisted_assignment_periods": "embargo_not_used_for_model_selection_or_final_claims"
+  },
+  "inference": {
+    "confidence_level": 0.95,
+    "arm_comparison_adjustment": "holm_for_all_three_pairwise_arm_comparisons",
+    "prespecified_arm_comparisons": [
+      "info_vs_control",
+      "coupon_vs_control",
+      "coupon_vs_info"
+    ],
+    "primary_policy_comparison": "locked_policy_vs_control",
+    "guardrail_policy_estimator": "ipw_for_locked_policy_vs_control",
+    "bootstrap_unit": "customer_id",
+    "bootstrap_repetitions": 2000,
+    "known_assignment_probabilities": true,
+    "guardrail_max_increase_unsubscribe_pp": 0.5,
+    "guardrail_max_increase_refund_customer_pp": 1.0,
+    "guardrail_familywise_one_sided_alpha": 0.05,
+    "guardrail_bonferroni_individual_one_sided_confidence": 0.975
+  },
+  "reproducibility": {
+    "base_seed": 101,
+    "independent_world_seeds": [
+      1101,
+      2202,
+      3303,
+      4404,
+      5505
+    ],
+    "rng_streams": [
+      "customer",
+      "assignment",
+      "purchase",
+      "contact",
+      "refund",
+      "bootstrap"
+    ],
+    "oracle_access": "post_policy_lock_separate_evaluation_only"
+  },
+  "scenario_ids": [
+    "base",
+    "no_behavior_effect",
+    "uniform_effect",
+    "cost_stress",
+    "response_shift",
+    "lower_demand",
+    "a_a_zero_cost"
+  ],
+  "unresolved_before_generation": [
+    "latent_distribution_and_hazard_coefficients",
+    "treatment_effect_functions_and_noise",
+    "delivery_missingness_refund_and_contact_probability_parameters",
+    "pilot_based_power_and_minimum_detectable_effect",
+    "compatible_python_environment_and_dependency_lock"
+  ],
+  "generator": {
+    "generator_version": "0.1.0",
+    "status": "synthetic_assumptions_not_fitted_to_market_data",
+    "counterfactual_outputs": "not_implemented_stage1_latent_state_only",
+    "customer": {
+      "channels": [
+        "organic",
+        "paid_search",
+        "paid_social",
+        "referral"
+      ],
+      "channel_weights": [
+        0.3,
+        0.25,
+        0.3,
+        0.15
+      ],
+      "consumption_grams_daily_min": 8.0,
+      "consumption_grams_daily_max": 28.0,
+      "preference_beta_alpha": 2.0,
+      "preference_beta_beta": 2.0,
+      "price_sensitivity_beta_alpha": 2.0,
+      "price_sensitivity_beta_beta": 2.5,
+      "initial_consent_probability": 0.88,
+      "initial_email_enabled_probability": 0.96,
+      "pre_assignment_revoke_probability": 0.025,
+      "first_discount_probability_intercept": 0.2,
+      "first_discount_probability_sensitivity_weight": 0.5,
+      "first_discount_fraction": 0.1,
+      "first_quantity_two_probability": 0.1
+    },
+    "delivery": {
+      "lead_days_min": 2,
+      "lead_days_max": 5
+    },
+    "behavior": {
+      "session_daily_intercept": 0.12,
+      "session_preference_weight": 0.3,
+      "tip_view_given_session_probability": 0.2,
+      "cart_given_session_probability": 0.16,
+      "pre_delivery_repeat_probability": 0.015,
+      "early_repeat_probability": 0.045,
+      "repeat_quantity_two_probability": 0.12,
+      "daily_base_odds": 0.006,
+      "depletion_peak_odds": 0.028,
+      "depletion_width_days": 12.0,
+      "preference_odds_floor": 0.5,
+      "preference_odds_weight": 1.2,
+      "seasonal_odds_amplitude": 0.15,
+      "natural_unsubscribe_probability_60d": 0.006
+    },
+    "contact": {
+      "delivery_success_probability": 0.94,
+      "open_probability_intercept": 0.22,
+      "open_preference_weight": 0.4,
+      "click_given_open_probability": 0.25,
+      "coupon_redeem_probability_intercept": 0.25,
+      "coupon_redeem_sensitivity_weight": 0.65
+    },
+    "effects": {
+      "coupon_extra_effect_scope": "unredeemed_delivered_coupon_before_expiry_only_information_effect_can_remain",
+      "active_days_after_contact": 14,
+      "info_log_odds_intercept": -0.12,
+      "info_log_odds_preference_weight": 0.8,
+      "coupon_extra_log_odds_intercept": -0.15,
+      "coupon_extra_log_odds_sensitivity_weight": 1.1,
+      "info_unsubscribe_probability_increment": 0.002,
+      "coupon_unsubscribe_probability_increment": 0.007,
+      "coupon_return_probability_increment": 0.012
+    },
+    "refund": {
+      "first_order_probability": 0.025,
+      "repeat_order_probability": 0.04,
+      "days_after_payment_min": 8,
+      "days_after_payment_max": 25,
+      "recovery_fraction": 0.0
+    }
+  },
+  "runtime": {
+    "profile_version": "0.1.0",
+    "purpose": "public_synthetic_schema_sample_not_effect_evidence",
+    "scenario": "base"
+  }
+}

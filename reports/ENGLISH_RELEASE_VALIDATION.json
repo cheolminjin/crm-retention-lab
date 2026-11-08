@@ -1,0 +1,177 @@
+{
+  "verified_on": "2026-11-09",
+  "status": "english_publication_files_prepared",
+  "content": {
+    "aggregate_sha256": {
+      "diagnostics": "24e9fc5cd10d9eca3d88cd1629fb2a2f97295551106dafa8753daf2a1bd76ced",
+      "experiment": "6c16ed5e55f2a6333fd2c0522eee11baaaeb09914927059bde534da36d774b01",
+      "experiment_checks": "68ab99fbbef5e11e1eb9785a0b6a693dac60fd23a2eb7ddb03142411a8aff354",
+      "policy": "05a053a283182a7c7d4a83010e0edac7d574a55b3cc09149ee5e9543e40cf79f"
+    },
+    "protected_source_and_config_files": 25,
+    "protected_file_changes": [],
+    "chart_count": 14,
+    "chart_numeric_traces_unchanged": true,
+    "table_cells": 341,
+    "table_numbers_unchanged_cell_by_cell": true,
+    "method_links_unchanged": 8,
+    "paths_and_commands_unchanged": true,
+    "body_number_token_changes": {
+      "removed": {
+        "3": 5,
+        "1": 1,
+        "300": 1
+      },
+      "added": {
+        "3,000,000": 1
+      }
+    },
+    "body_numbers_unchanged_after_language_and_currency_normalization": true,
+    "normalizations": [
+      "Three-arm references spelled out in English (5 occurrences)",
+      "Per customer replaces the numeric count-word expression (1 occurrence)",
+      "KRW 3,000,000 replaces the equivalent Korean ten-thousand currency-unit expression (1 occurrence)"
+    ],
+    "analysis_recomputed": false
+  },
+  "render": {
+    "html": {
+      "sections": 13,
+      "tables": 17,
+      "charts": 14,
+      "tableCells": 341,
+      "sourceLinks": 8,
+      "hangul": false
+    },
+    "print": {
+      "sections": 13,
+      "tables": 17,
+      "charts": 14,
+      "hangul": false
+    },
+    "mobile": {
+      "viewport": 390,
+      "documentWidth": 390,
+      "chartWidth": 760,
+      "scrollContainers": 14
+    },
+    "labels": [
+      {
+        "text": "56.4%",
+        "withinFigure": true,
+        "cliponaxis": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "text": "14,545 KRW",
+        "withinFigure": true,
+        "cliponaxis": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "text": "+888 KRW",
+        "withinFigure": true,
+        "cliponaxis": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "overflow": [],
+    "hover_verified": true,
+    "table_cells_identical_between_html_and_print": true,
+    "external_requests": [],
+    "browser_errors": []
+  },
+  "pdf": {
+    "pages": 22,
+    "page_images": 22,
+    "blank_pages": [],
+    "hangul_found": false,
+    "contains_Dudik": true,
+    "label_pages": {
+      "56.4%": [
+        6
+      ],
+      "14,545 KRW": [
+        9,
+        10
+      ],
+      "+888 KRW": [
+        10
+      ],
+      "rounded down to integers": [
+        19
+      ]
+    }
+  },
+  "publication": {
+    "candidate_files": 156,
+    "public_only_reproduction": {
+      "files_copied": 156,
+      "private_data_or_models_present": false,
+      "plotly_bundle_restored": true,
+      "quarto_source_identical": true,
+      "aggregate_hashes_preserved": true,
+      "tampered_aggregate_rejected_before_output_change": true,
+      "analysis_recomputed": false
+    },
+    "public_authored_hangul_files": [],
+    "unchanged_vendor_multilingual_country_aliases": [
+      "reports/CRM_DIAGNOSTIC.html"
+    ],
+    "broken_relative_links": [],
+    "personal_local_paths": [],
+    "secret_pattern_matches": []
+  },
+  "tests": {
+    "total": 218,
+    "passed": 214,
+    "skipped": 4,
+    "failed": 0,
+    "skip_reason": "Windows hardlink/symlink creation permissions",
+    "final_visual_tests_passed": 11
+  },
+  "visual_review": {
+    "pages_reviewed": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
+    "defects_observed": []
+  },
+  "author_confirmation": [],
+  "remote_publication_performed": false,
+  "artifacts": {
+    "README.md": "065028aa27773185809bee774cd694d741476dda11052a457b872847c218dbc4",
+    "report/index.qmd": "6ac5a2ad6dfcf9134d20b898d75b204291fbf4f74392242d7d464f2a6ab39a55",
+    "reports/CRM_DIAGNOSTIC.html": "fa87861ee823ff42425cc4df55223f0712821939a57abc62504f6135db8dcc46",
+    "output/pdf/CRM_FINAL_REPORT.pdf": "d894a9560e4358127ef9e616356aec6bc83bad3a141cb3c1bb9d5db6348a53ca"
+  }
+}

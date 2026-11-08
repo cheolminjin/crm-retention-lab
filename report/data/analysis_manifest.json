@@ -1,0 +1,334 @@
+{
+  "stage": 4,
+  "data_origin": "fully_synthetic",
+  "analysis_scope": "train_diagnosis_and_experiment__validation_selection__locked_final_policy",
+  "as_of": "2025-10-01T00:00:00+09:00",
+  "input_simulation_id": "sim-8aecf9722a5328b9",
+  "created_at_utc": "2026-11-08T13:15:03+00:00",
+  "python": "3.14.3",
+  "packages": {
+    "plotly": "7.1.0",
+    "kaleido": "1.5.0",
+    "lifelines": "0.30.3",
+    "scipy": "1.18.1",
+    "numpy": "2.5.4",
+    "scikit_learn": "1.9.1"
+  },
+  "config_sha256": "8aecf9722a5328b9abdba51b7810422fd17a5b5cb83aab39ffca05c8f67431fc",
+  "source_run_manifest_sha256": "e5f1e5f1ec6fe94c7cd535cb18a4ea6520f09aeab68dd6e07a52dedfa9a1c98e",
+  "analysis_source_sha256": {
+    "src/crm_retention_lab/__init__.py": "05d91e1aa7ce97acb6bffb53f0b8abb44971a5c70173639cde20deef725ffd49",
+    "src/crm_retention_lab/cli.py": "e3706e083e098713a71ecb28b336e816fb6fb873e98689381efb49e2b7f4fbad",
+    "src/crm_retention_lab/config.py": "a7acab5a678173f04e98d6e4ffa2c20c8de09099c2cb0007918e686905a5ac28",
+    "src/crm_retention_lab/contracts.py": "7fb656a78be573e7e984947b6701eebdb84a81efbbf6d68de38b41a3aaacf0e8",
+    "src/crm_retention_lab/diagnostics.py": "211bf3c845ed97d05fdb90dba466647359eec9e9912ff09e9c2f4a71d57970d0",
+    "src/crm_retention_lab/eligibility.py": "b7734ec17d5f899b463596aa6dd3fb7d2ed78061bd710881123a6aac6e972516",
+    "src/crm_retention_lab/experiment.py": "f6856e838fd17efddfd54837f2bb1a93c518f158870d70b145acf134fb4e730b",
+    "src/crm_retention_lab/experiment_checks.py": "9ec6e4123b0801f61e52f01bf8aa5003075a1252f90bdd0b110d26766f81b47b",
+    "src/crm_retention_lab/experiment_reporting.py": "89c855b5cb190d4fce77cea989fff1297bdf93d29663eb535258b98916652f5e",
+    "src/crm_retention_lab/experiment_visuals.py": "c6aad02681fc14df045dca2ad3ac4896142b43f585085045d9b345b1c4854559",
+    "src/crm_retention_lab/finance.py": "afb2cd8876c8ea7918b0d938ed08be4d80cbc2c0877fe8b371b18dc77ccd9412",
+    "src/crm_retention_lab/marts.py": "36e9a556b94cdab62f1a437861e3ac8865d19e8a098774fc3d1a0d1320130014",
+    "src/crm_retention_lab/policy.py": "890f3db4d61451a2f2bf43d4fa93601392d297215764c8a157469e28e01e02ad",
+    "src/crm_retention_lab/policy_evaluation.py": "a4a769a687f05d75fe2bad174cf7e7b585b5d0d4639505cc08ef3f73e9274489",
+    "src/crm_retention_lab/policy_pipeline.py": "81aa7ad92dfeb9fd6602c53008af148c461a386f579c3f7b0e51b130c2e8bcd5",
+    "src/crm_retention_lab/policy_report.py": "dfa09fc1592d0e161a9f70a770d01bf551aa5e91764af5b7fd697d0280ec71a2",
+    "src/crm_retention_lab/policy_reporting.py": "3266e04679f2481df90bc72782d180077c9ea9b477d8e54c50a965bf87372504",
+    "src/crm_retention_lab/policy_visuals.py": "63e57ec7177fce972e3c5f0ed567e3dd4cef2fc1101ef7c0c9f99f729ae395a2",
+    "src/crm_retention_lab/reporting.py": "d141a09c164cb010211cc23f44ec4c70bc6520f4a870e28c197d66aab5611292",
+    "src/crm_retention_lab/schema.py": "b524c10ce08b2cae6ac2b719d840f737e18b5115bdf69fb7107286f9e44d3e88",
+    "src/crm_retention_lab/simulation.py": "b0d2f08383e385147bd106e49dea00e912ae19feaef0e01df5a7677d3e2c7a29",
+    "src/crm_retention_lab/storage.py": "59f88a4f71daddcb201a22529af9cfdef395504caf217131aed4155a916f2e42",
+    "src/crm_retention_lab/uplift.py": "1e8004c33490735c31ec524cc091c6b91bd6d5d37df982cc69cd51a8b021b624",
+    "src/crm_retention_lab/visuals.py": "337bf8dd87a145ab4721793298a30b3a4175bd4a2d4a28b68e1a127ad146d805"
+  },
+  "mart_sha256": {
+    "features.jsonl": "09839d640699a67d33ad01495287ae5867bf2b090deb88b14d04de4dc7f072d3",
+    "outcomes.jsonl": "09af533130d1737021ad331cbb4681d1def86619bc451d9e3347fcbbdb04467c",
+    "metadata.json": "be3685614aa35cb1b893a740af3685d1ca296742833e42662b56981b782f7813"
+  },
+  "diagnostics_sha256": "24e9fc5cd10d9eca3d88cd1629fb2a2f97295551106dafa8753daf2a1bd76ced",
+  "report_source_sha256": "6ac5a2ad6dfcf9134d20b898d75b204291fbf4f74392242d7d464f2a6ab39a55",
+  "observed_validation": {
+    "valid": true,
+    "row_counts": {
+      "customers": 20000,
+      "orders": 42344,
+      "order_events": 86131,
+      "order_ledger": 258393,
+      "customer_events": 143139,
+      "assignments": 15284,
+      "contacts": 10179,
+      "eligibility_audit": 20000
+    }
+  },
+  "oracle_used": false,
+  "final_test_used": true,
+  "figures": {
+    "figures": {
+      "eligibility_flow": {
+        "html": "assets/figures/eligibility_flow.html",
+        "json": "assets/figures/eligibility_flow.json",
+        "standalone_html": null,
+        "svg": "assets/figures/eligibility_flow.svg"
+      },
+      "cohort_heatmap": {
+        "html": "assets/figures/cohort_heatmap.html",
+        "json": "assets/figures/cohort_heatmap.json",
+        "standalone_html": null,
+        "svg": "assets/figures/cohort_heatmap.svg"
+      },
+      "pack_km": {
+        "html": "assets/figures/pack_km.html",
+        "json": "assets/figures/pack_km.json",
+        "standalone_html": null,
+        "svg": "assets/figures/pack_km.svg"
+      },
+      "pack_repeat_60d": {
+        "html": "assets/figures/pack_repeat_60d.html",
+        "json": "assets/figures/pack_repeat_60d.json",
+        "standalone_html": null,
+        "svg": "assets/figures/pack_repeat_60d.svg"
+      },
+      "arm_profit": {
+        "html": "assets/figures/arm_profit.html",
+        "json": "assets/figures/arm_profit.json",
+        "standalone_html": null,
+        "svg": "assets/figures/arm_profit.svg"
+      },
+      "profit_effects": {
+        "html": "assets/figures/profit_effects.html",
+        "json": "assets/figures/profit_effects.json",
+        "standalone_html": null,
+        "svg": "assets/figures/profit_effects.svg"
+      },
+      "coupon_info_waterfall": {
+        "html": "assets/figures/coupon_info_waterfall.html",
+        "json": "assets/figures/coupon_info_waterfall.json",
+        "standalone_html": null,
+        "svg": "assets/figures/coupon_info_waterfall.svg"
+      },
+      "safety_effects": {
+        "html": "assets/figures/safety_effects.html",
+        "json": "assets/figures/safety_effects.json",
+        "standalone_html": null,
+        "svg": "assets/figures/safety_effects.svg"
+      },
+      "balance": {
+        "html": "assets/figures/balance.html",
+        "json": "assets/figures/balance.json",
+        "standalone_html": null,
+        "svg": "assets/figures/balance.svg"
+      },
+      "policy_validation": {
+        "html": "assets/figures/policy_validation.html",
+        "json": "assets/figures/policy_validation.json",
+        "standalone_html": null,
+        "svg": "assets/figures/policy_validation.svg"
+      },
+      "policy_profit": {
+        "html": "assets/figures/policy_profit.html",
+        "json": "assets/figures/policy_profit.json",
+        "standalone_html": null,
+        "svg": "assets/figures/policy_profit.svg"
+      },
+      "policy_allocation": {
+        "html": "assets/figures/policy_allocation.html",
+        "json": "assets/figures/policy_allocation.json",
+        "standalone_html": null,
+        "svg": "assets/figures/policy_allocation.svg"
+      },
+      "policy_guardrails": {
+        "html": "assets/figures/policy_guardrails.html",
+        "json": "assets/figures/policy_guardrails.json",
+        "standalone_html": null,
+        "svg": "assets/figures/policy_guardrails.svg"
+      },
+      "policy_segments": {
+        "html": "assets/figures/policy_segments.html",
+        "json": "assets/figures/policy_segments.json",
+        "standalone_html": null,
+        "svg": "assets/figures/policy_segments.svg"
+      }
+    },
+    "plotly_version": "7.1.0",
+    "static_svg": {
+      "requested": true,
+      "status": "exported",
+      "errors": []
+    }
+  },
+  "experiment_sha256": "6c16ed5e55f2a6333fd2c0522eee11baaaeb09914927059bde534da36d774b01",
+  "experiment_checks_sha256": "68ab99fbbef5e11e1eb9785a0b6a693dac60fd23a2eb7ddb03142411a8aff354",
+  "analysis_spec_sha256": "b60447cbf638c2c3b3b2e03aac001015462da5d1e1841e11cca463d25cd84c46",
+  "stage_3_provenance": {
+    "analysis_scope": "train",
+    "as_of": "2025-10-01T00:00:00+09:00",
+    "analysis_source_sha256": {
+      "src/crm_retention_lab/__init__.py": "05d91e1aa7ce97acb6bffb53f0b8abb44971a5c70173639cde20deef725ffd49",
+      "src/crm_retention_lab/cli.py": "76567ef5a5fac7818807d5241545914fec48d5defb7dcb341a8b120199c1d13d",
+      "src/crm_retention_lab/config.py": "a7acab5a678173f04e98d6e4ffa2c20c8de09099c2cb0007918e686905a5ac28",
+      "src/crm_retention_lab/contracts.py": "7fb656a78be573e7e984947b6701eebdb84a81efbbf6d68de38b41a3aaacf0e8",
+      "src/crm_retention_lab/diagnostics.py": "211bf3c845ed97d05fdb90dba466647359eec9e9912ff09e9c2f4a71d57970d0",
+      "src/crm_retention_lab/eligibility.py": "b7734ec17d5f899b463596aa6dd3fb7d2ed78061bd710881123a6aac6e972516",
+      "src/crm_retention_lab/experiment.py": "f6856e838fd17efddfd54837f2bb1a93c518f158870d70b145acf134fb4e730b",
+      "src/crm_retention_lab/experiment_checks.py": "9ec6e4123b0801f61e52f01bf8aa5003075a1252f90bdd0b110d26766f81b47b",
+      "src/crm_retention_lab/experiment_reporting.py": "89c855b5cb190d4fce77cea989fff1297bdf93d29663eb535258b98916652f5e",
+      "src/crm_retention_lab/experiment_visuals.py": "c6aad02681fc14df045dca2ad3ac4896142b43f585085045d9b345b1c4854559",
+      "src/crm_retention_lab/finance.py": "afb2cd8876c8ea7918b0d938ed08be4d80cbc2c0877fe8b371b18dc77ccd9412",
+      "src/crm_retention_lab/marts.py": "0c03195b127e8499e712a10abd3489b8b711a40a9b2c1bb83fa86740d906c57b",
+      "src/crm_retention_lab/reporting.py": "a80ffed398a2b665374469b2a7df00a6a0c9d05ba1ee8cbb19621ab322b8c0a5",
+      "src/crm_retention_lab/schema.py": "b524c10ce08b2cae6ac2b719d840f737e18b5115bdf69fb7107286f9e44d3e88",
+      "src/crm_retention_lab/simulation.py": "b0d2f08383e385147bd106e49dea00e912ae19feaef0e01df5a7677d3e2c7a29",
+      "src/crm_retention_lab/storage.py": "59f88a4f71daddcb201a22529af9cfdef395504caf217131aed4155a916f2e42",
+      "src/crm_retention_lab/visuals.py": "337bf8dd87a145ab4721793298a30b3a4175bd4a2d4a28b68e1a127ad146d805"
+    },
+    "source_run_manifest_sha256": "e5f1e5f1ec6fe94c7cd535cb18a4ea6520f09aeab68dd6e07a52dedfa9a1c98e",
+    "analysis_spec_sha256": "b60447cbf638c2c3b3b2e03aac001015462da5d1e1841e11cca463d25cd84c46"
+  },
+  "splits": {
+    "train": {
+      "mart_version": "0.1.0",
+      "analysis_scope": "train",
+      "as_of": "2025-10-01T00:00:00+09:00",
+      "requested_as_of": null,
+      "cutoff": "2025-10-01T00:00:00+09:00",
+      "train_labels_available_by": "2025-10-01T00:00:00+09:00",
+      "train_start_inclusive": "2025-01-15T00:00:00+09:00",
+      "train_end_exclusive": "2025-07-01T00:00:00+09:00",
+      "feature_columns": [
+        "first_pack_grams",
+        "first_quantity",
+        "first_paid_amount_krw",
+        "first_discount_rate",
+        "delivery_lead_days",
+        "acquisition_channel",
+        "sessions_d0_d13",
+        "tip_views_d0_d13",
+        "cart_events_d0_d13",
+        "days_since_last_session",
+        "first_delivery_month"
+      ],
+      "feature_metadata_columns": [
+        "customer_id",
+        "assignment_id",
+        "arm",
+        "assigned_at",
+        "feature_cutoff_at",
+        "feature_version"
+      ],
+      "input_simulation_id": "sim-8aecf9722a5328b9",
+      "input_first_delivery_customers_known_as_of": 20000,
+      "selected_assignments": 15284,
+      "finalized_label_count": 15284,
+      "labels_require_full_settlement": true,
+      "missing_last_session_representation": "null",
+      "interval_convention": "start_inclusive_end_exclusive",
+      "identity_namespace": "sim-8aecf9722a5328b9",
+      "identity_rule": "simulation_id:local_id",
+      "source_seed": 20261108,
+      "source_manifest_sha256": "e5f1e5f1ec6fe94c7cd535cb18a4ea6520f09aeab68dd6e07a52dedfa9a1c98e"
+    },
+    "validation": {
+      "mart_version": "0.1.0",
+      "analysis_scope": "validation",
+      "as_of": "2026-03-01T00:00:00+09:00",
+      "requested_as_of": null,
+      "cutoff": "2026-03-01T00:00:00+09:00",
+      "feature_columns": [
+        "first_pack_grams",
+        "first_quantity",
+        "first_paid_amount_krw",
+        "first_discount_rate",
+        "delivery_lead_days",
+        "acquisition_channel",
+        "sessions_d0_d13",
+        "tip_views_d0_d13",
+        "cart_events_d0_d13",
+        "days_since_last_session",
+        "first_delivery_month"
+      ],
+      "feature_metadata_columns": [
+        "customer_id",
+        "assignment_id",
+        "arm",
+        "assigned_at",
+        "feature_cutoff_at",
+        "feature_version"
+      ],
+      "input_simulation_id": "sim-35f0627d627d5ab7",
+      "input_first_delivery_customers_known_as_of": 20000,
+      "selected_assignments": 15167,
+      "finalized_label_count": 15167,
+      "labels_require_full_settlement": true,
+      "missing_last_session_representation": "null",
+      "interval_convention": "start_inclusive_end_exclusive",
+      "split_readout_at": "2026-03-01T00:00:00+09:00",
+      "split_start_inclusive": "2025-10-01T00:00:00+09:00",
+      "split_end_exclusive": "2025-12-01T00:00:00+09:00",
+      "identity_namespace": "sim-35f0627d627d5ab7",
+      "identity_rule": "simulation_id:local_id",
+      "source_seed": 20261109,
+      "source_manifest_sha256": "4b4a339e76f1e57c6aecfb301375aaea7e97ab5674dee2ce25ff07bdb5264bcb"
+    },
+    "final_test": {
+      "mart_version": "0.1.0",
+      "analysis_scope": "final_test",
+      "as_of": "2026-08-01T00:00:00+09:00",
+      "requested_as_of": null,
+      "cutoff": "2026-08-01T00:00:00+09:00",
+      "feature_columns": [
+        "first_pack_grams",
+        "first_quantity",
+        "first_paid_amount_krw",
+        "first_discount_rate",
+        "delivery_lead_days",
+        "acquisition_channel",
+        "sessions_d0_d13",
+        "tip_views_d0_d13",
+        "cart_events_d0_d13",
+        "days_since_last_session",
+        "first_delivery_month"
+      ],
+      "feature_metadata_columns": [
+        "customer_id",
+        "assignment_id",
+        "arm",
+        "assigned_at",
+        "feature_cutoff_at",
+        "feature_version"
+      ],
+      "input_simulation_id": "sim-4c3a39106c7ee7c7",
+      "input_first_delivery_customers_known_as_of": 20000,
+      "selected_assignments": 15363,
+      "finalized_label_count": 15363,
+      "labels_require_full_settlement": true,
+      "missing_last_session_representation": "null",
+      "interval_convention": "start_inclusive_end_exclusive",
+      "split_readout_at": "2026-08-01T00:00:00+09:00",
+      "split_start_inclusive": "2026-03-01T00:00:00+09:00",
+      "split_end_exclusive": "2026-05-01T00:00:00+09:00",
+      "identity_namespace": "sim-4c3a39106c7ee7c7",
+      "identity_rule": "simulation_id:local_id",
+      "source_seed": 20261110,
+      "source_manifest_sha256": "79caf5f352c81e9f622b2adc65f449d6f54ea7c95b607c0af30994e5d966c2b9"
+    }
+  },
+  "policy_sha256": "05a053a283182a7c7d4a83010e0edac7d574a55b3cc09149ee5e9543e40cf79f",
+  "policy_lock_sha256": "c638b2ae3d6df79b2eb6d7e5812cdafdf62ec953fde7bfa7748dc8511d9ab0aa",
+  "policy_spec_sha256": "fd3a5fc3c2dc3a8834cd96326ecf7b8c97aaecc4a4333ec88f83c994f5cc5ecd",
+  "presentation_refresh": {
+    "analysis_recomputed": false,
+    "model_refitted": false,
+    "policy_reselected": false,
+    "source_sha256": {
+      "src/crm_retention_lab/reporting.py": "d6987453fdcc7ff1a9d9391537796a883c501823f0f4ab736e64dc60c4a29829",
+      "src/crm_retention_lab/experiment_reporting.py": "c7748ad8c94a92cb3b1779d0424e2753746e6f66f3630edc402c0727439fd6e7",
+      "src/crm_retention_lab/policy_reporting.py": "2abde6e3d7022872a6d267f681dfdb669bf85f518852732d6c920fdff0b897ae",
+      "src/crm_retention_lab/visuals.py": "62a9e4e2bc8470c0722b969744012320d913ee9283261b51beff99a33936ac0c",
+      "src/crm_retention_lab/experiment_visuals.py": "c5e9f93e41743530afabd88608aa1e3ff887aaba8bf64222cd288af8cc3ed12b",
+      "src/crm_retention_lab/policy_visuals.py": "3b922c692a3d03b474d60ef02d8a02bab51b9e4a62d3436645c72577ae947de3",
+      "scripts/refresh_report.py": "a1ddff0ab8b9650f93fd0cc2a3b6db3d9c3485f50d00c7ea2000196588e75536"
+    }
+  }
+}

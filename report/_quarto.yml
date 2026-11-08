@@ -1,0 +1,35 @@
+project:
+  type: default
+  output-dir: _site
+  render:
+    - index.qmd
+
+lang: en
+format:
+  html:
+    theme:
+      - cosmo
+      - theme.scss
+    css: styles.css
+    page-layout: article
+    toc: true
+    toc-depth: 2
+    toc-title: Contents
+    toc-location: right
+    number-sections: false
+    embed-resources: true
+    smooth-scroll: true
+    code-fold: true
+    code-summary: Show code
+    code-copy: true
+    fig-responsive: true
+    fontsize: 17px
+    grid:
+      body-width: 880px
+      margin-width: 190px
+      gutter-width: 1.5rem
+
+execute:
+  echo: false
+  warning: false
+  message: false

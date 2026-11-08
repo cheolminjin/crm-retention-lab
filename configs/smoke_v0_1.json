@@ -1,0 +1,16 @@
+{
+  "profile_version": "0.1.0",
+  "purpose": "engineering_smoke_not_final_evaluation",
+  "design_file": "design_v0_1.json",
+  "generator_file": "generator_v0_1.json",
+  "scenario": "base",
+  "overrides": {
+    "population": {
+      "first_delivery_customers": 1000,
+      "first_delivery_start_inclusive": "2025-01-01T00:00:00+09:00",
+      "first_delivery_end_exclusive": "2025-07-01T00:00:00+09:00",
+      "observation_end_exclusive": "2025-07-01T00:00:00+09:00"
+    },
+    "reproducibility": { "base_seed": 101 }
+  }
+}

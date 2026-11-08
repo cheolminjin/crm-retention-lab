@@ -1,0 +1,75 @@
+{
+  "format": "pdf",
+  "source_html": "reports/CRM_DIAGNOSTIC.html",
+  "source_html_sha256": "fa87861ee823ff42425cc4df55223f0712821939a57abc62504f6135db8dcc46",
+  "analysis_manifest_sha256": "43a7d76b0b9a43d2eafbc1b6680201aa17c388be5c1ddb5a5d285ed30dd803ad",
+  "source_sections": [
+    {
+      "id": "pdf-section-1",
+      "title": "1. CRM eligibility and exclusions"
+    },
+    {
+      "id": "pdf-section-2",
+      "title": "2. Cumulative repurchase by assignment month"
+    },
+    {
+      "id": "pdf-section-3",
+      "title": "3. Repurchase timing by customer group"
+    },
+    {
+      "id": "pdf-section-4",
+      "title": "4. Customer-group differences and next hypotheses"
+    },
+    {
+      "id": "pdf-section-5",
+      "title": "5. Three-arm assignment and baseline features"
+    },
+    {
+      "id": "pdf-section-6",
+      "title": "6. Incremental contribution profit per customer"
+    },
+    {
+      "id": "pdf-section-7",
+      "title": "7. Added coupon value and cost reconciliation"
+    },
+    {
+      "id": "pdf-section-8",
+      "title": "8. Side effects and operating conditions"
+    },
+    {
+      "id": "pdf-section-9",
+      "title": "9. Customer-level models and policy lock"
+    },
+    {
+      "id": "pdf-section-10",
+      "title": "10. Independent incremental profit of the locked policy"
+    },
+    {
+      "id": "pdf-section-11",
+      "title": "11. Constrained allocation and selection rationale"
+    },
+    {
+      "id": "pdf-section-12",
+      "title": "12. Side-effect upper bounds and final decision"
+    },
+    {
+      "id": "pdf-section-13",
+      "title": "13. Interpretation and scope"
+    }
+  ],
+  "section_count": 13,
+  "table_count": 17,
+  "figure_count": 14,
+  "print_figure_width_px": 850,
+  "minimum_axis_font_px": 14.5,
+  "minimum_annotation_font_px": 13.5,
+  "external_requests": [],
+  "render_errors": [],
+  "source_sha256": {
+    "scripts/render_pdf.cjs": "fa941c90fe5245243ae8a4c11a45354f655d210a326c497b79dc8cd0737532ac",
+    "report/pdf.css": "2176863e6c85da67b9e49b443c528ab815396ab781c23cb8e59980395a285873"
+  },
+  "pdf_sha256": "d894a9560e4358127ef9e616356aec6bc83bad3a141cb3c1bb9d5db6348a53ca",
+  "output": "output/pdf/CRM_FINAL_REPORT.pdf",
+  "bytes": 558728
+}

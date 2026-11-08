@@ -1,0 +1,37 @@
+{
+  "version": "0.1.0",
+  "model_spec": {
+    "random_state": 20261108,
+    "ridge": {"alpha": 100.0},
+    "logistic": {"C": 1.0, "max_iter": 1000, "class_weight": null},
+    "hgb": {"max_leaf_nodes": 15, "min_samples_leaf": 80, "l2_regularization": 10.0,
+            "max_iter": 120, "learning_rate": 0.05, "early_stopping": false}
+  },
+  "candidate_models": ["ridge", "hgb"],
+  "penalty_lambdas": [0.0, 0.5, 1.0, 2.0],
+  "risk_filter": true,
+  "baseline_model": "hgb",
+  "evaluation_nuisance_model": "hgb",
+  "baseline_kinds": ["control", "random_info", "random_coupon", "rule", "risk_coupon"],
+  "policy_random_seed": 20261111,
+  "validation_selection": {
+    "profit_screen": "normal_95_lower_exceeds_fixed_setup_per_eligible_customer",
+    "harm_screen": "normal_one_sided_bonferroni_across_8_candidates_times_2_metrics",
+    "harm_familywise_alpha": 0.05,
+    "complexity_rule": "prefer_ridge_among_feasible_candidates_within_one_standard_error_of_best_dr",
+    "within_family_rank": "highest_dr_then_lowest_lambda_then_id",
+    "fallback": "control",
+    "interval_interpretation": "conditional_validation_screen_only_not_final_inference"
+  },
+  "final_bootstrap": {"repetitions": 2000, "seed": 20261112,
+    "unit": "customer_resampled_within_original_assignment_day",
+    "reallocate_each_resample": true, "refit_models": false},
+  "final_evaluation": {
+    "primary": "locked_policy_vs_all_control_dr_profit",
+    "sensitivity": "ipw_profit",
+    "guardrails": "ipw_unsubscribe_and_refund_difference_upper_97.5_percent",
+    "baseline_interpretation": "exploratory_fixed_benchmarks_not_reselection"
+  },
+  "validation_profile": "validation_policy_v0_1.json",
+  "final_profile": "final_policy_v0_1.json"
+}

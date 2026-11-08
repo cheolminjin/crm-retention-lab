@@ -1,0 +1,9 @@
+# Preserve the exact bytes used by recorded SHA-256 manifests on every platform.
+* -text whitespace=cr-at-eol
+*.md whitespace=-blank-at-eol,cr-at-eol
+*.qmd whitespace=-blank-at-eol,cr-at-eol
+# These files contain embedded Markdown or generated third-party HTML/JS.
+src/crm_retention_lab/*reporting.py whitespace=-blank-at-eol,cr-at-eol
+reports/*.html whitespace=-blank-at-eol,cr-at-eol
+*.pdf binary
+*.png binary

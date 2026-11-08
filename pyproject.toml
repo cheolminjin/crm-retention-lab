@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "crm-retention-lab"
+version = "0.1.0"
+description = "Synthetic first-to-second-purchase CRM planning portfolio"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+analysis = ["plotly==7.1.0", "kaleido==1.5.0", "lifelines==0.30.3", "scipy==1.18.1", "wrapt==2.5.2", "scikit-learn==1.9.1", "joblib==1.6.0"]
+
+[project.scripts]
+crm-retention-lab = "crm_retention_lab.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 110

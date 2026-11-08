@@ -1,0 +1,42 @@
+# Python and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Local credentials and editor state
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+
+# Generated simulation records, oracle data and run artifacts
+data/generated/
+data/oracle/
+artifacts/runs/
+models/
+*.joblib
+*.pkl
+*.pickle
+*.log
+.ipynb_checkpoints/
+.test-tmp/
+.tools/
+tmp/pdfs/
+report/.quarto/
+report/_site/
+report/assets/plotly.min.js
+
+# Curated synthetic samples and reviewed reports may be committed explicitly.
+# Avoid blanket rules for data/, notebooks/, reports/ or docs/.

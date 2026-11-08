@@ -1,0 +1,245 @@
+{
+  "status": "approved_edits_applied_and_rendered",
+  "approved_items": 67,
+  "approved_display_fixes": 4,
+  "source": {
+    "status": "applied_source_verified_render_verification_separate",
+    "matches_approved_body_plus_display_fixes": true,
+    "raw_number_changes": {
+      "removed": {
+        "1000g": 2,
+        "-0 KRW": 1
+      },
+      "added": {
+        "1,000g": 2,
+        "0 KRW": 1
+      }
+    },
+    "number_changes_after_approved_display_normalization": {
+      "removed": {},
+      "added": {}
+    },
+    "link_changes": {
+      "removed": {},
+      "added": {}
+    },
+    "inline_code_path_command_changes": {
+      "removed": {},
+      "added": {}
+    },
+    "protected_spellings": {
+      "Not established": {
+        "before": 7,
+        "after": 6
+      },
+      "Within tolerance": {
+        "before": 3,
+        "after": 3
+      },
+      "Evidence of an increase": {
+        "before": 5,
+        "after": 5
+      },
+      "ITT": {
+        "before": 3,
+        "after": 3
+      },
+      "DR": {
+        "before": 11,
+        "after": 11
+      },
+      "IPW": {
+        "before": 7,
+        "after": 7
+      },
+      "exploratory baselines": {
+        "before": 2,
+        "after": 2
+      },
+      "locked policy": {
+        "before": 11,
+        "after": 11
+      },
+      "rounded down to integers": {
+        "before": 1,
+        "after": 1
+      },
+      "Dudík": {
+        "before": 1,
+        "after": 1
+      }
+    },
+    "table_count": 17,
+    "chart_count": 14,
+    "aggregate_hashes": {
+      "diagnostics": "24e9fc5cd10d9eca3d88cd1629fb2a2f97295551106dafa8753daf2a1bd76ced",
+      "experiment": "6c16ed5e55f2a6333fd2c0522eee11baaaeb09914927059bde534da36d774b01",
+      "experiment_checks": "68ab99fbbef5e11e1eb9785a0b6a693dac60fd23a2eb7ddb03142411a8aff354",
+      "policy": "05a053a283182a7c7d4a83010e0edac7d574a55b3cc09149ee5e9543e40cf79f"
+    },
+    "chart_numeric_data_changes": [],
+    "intentional_exceptions": [
+      "1000g → 1,000g",
+      "-0 KRW → 0 KRW",
+      "Prior rule → Package/tips rule",
+      "One requested three-arm reference added to the PDF contents description"
+    ],
+    "author_confirmation": [
+      "No body item required new reasons, values, or interpretations",
+      "GitHub destination, visibility, and license not yet selected"
+    ],
+    "table_cells_preserved_after_display_normalization": true,
+    "analysis_and_policy_code_unchanged": true,
+    "chart_traces_preserved_after_approved_text_and_clip_changes": true,
+    "figure_json_count": 14
+  },
+  "render": {
+    "html": {
+      "sections": 13,
+      "tables": 17,
+      "charts": 14,
+      "tableCells": 341,
+      "sourceLinks": 8
+    },
+    "print": {
+      "sections": 13,
+      "tables": 17,
+      "charts": 14
+    },
+    "labels": [
+      {
+        "text": "56.4%",
+        "box": {
+          "x": 465.766845703125,
+          "y": 178.6099853515625,
+          "width": 38.1953125,
+          "height": 18
+        },
+        "plotTop": 160,
+        "withinFigure": true,
+        "cliponaxis": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "text": "14,545 KRW",
+        "box": {
+          "x": 634.3518676757812,
+          "y": 184.10000610351562,
+          "width": 51.65625,
+          "height": 17
+        },
+        "plotTop": 160,
+        "withinFigure": true,
+        "cliponaxis": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "text": "+888 KRW",
+        "box": {
+          "x": 360.5531005859375,
+          "y": 184.10000610351562,
+          "width": 43.59375,
+          "height": 17
+        },
+        "plotTop": 160,
+        "withinFigure": true,
+        "cliponaxis": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "table_cells_unchanged_after_display_normalization": true,
+    "external_requests": [],
+    "browser_errors": []
+  },
+  "pdf": {
+    "before_pages": 22,
+    "after_pages": 22,
+    "page_images": 22,
+    "numeric_changes_after_display_normalization": {
+      "removed": {},
+      "added": {
+        "3": 1
+      }
+    },
+    "labels_pages": {
+      "56.4%": [
+        6
+      ],
+      "14,545 KRW": [
+        9,
+        10
+      ],
+      "+888 KRW": [
+        10
+      ],
+      "Not established": [
+        14
+      ],
+      "Dudík": [
+        22
+      ],
+      "rounded down to integers": [
+        18
+      ]
+    },
+    "blank_pages": []
+  },
+  "public_reproduction": {
+    "candidate_files_copied": 150,
+    "private_raw_data_and_models_present": false,
+    "missing_plotly_bundle_restored": true,
+    "quarto_source_identical": true,
+    "public_aggregates_unchanged": true,
+    "tampered_aggregate_rejected_before_output_changes": true,
+    "analysis_recomputed": false
+  },
+  "tests": {
+    "total": 218,
+    "passed": 214,
+    "skipped": 4,
+    "failed": 0,
+    "skip_reason": "Windows filesystem permissions for hardlink/symlink tests"
+  },
+  "visual_review": {
+    "pages_reviewed": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
+    "top_label_fixes": [
+      "56.4%",
+      "14,545 KRW",
+      "+888 KRW"
+    ],
+    "defects_observed": []
+  },
+  "record_scope": "Historical approved Korean editorial revision, before English translation. Labels in this record are translated for the English public repository; counts and measurements refer to that earlier revision."
+}

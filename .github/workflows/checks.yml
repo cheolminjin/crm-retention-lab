@@ -1,0 +1,49 @@
+name: Synthetic data checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ['3.10', '3.14']
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Unit and integration tests
+        run: python scripts/run.py test
+      - name: Generate engineering smoke data
+        run: python scripts/run.py generate --config configs/smoke_v0_1.json --output data/generated/ci-smoke --oracle-output data/oracle/ci-smoke
+      - name: Revalidate saved data and hashes
+        run: python scripts/run.py validate --run-dir data/generated/ci-smoke
+
+  analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.14'
+      - name: Install pinned analysis dependencies
+        run: python -m pip install -r requirements-analysis.lock.txt
+      - name: Verify numerical and chart contracts
+        run: python scripts/run.py test
+      - name: Generate diagnostic input
+        run: python scripts/run.py generate --config configs/smoke_v0_1.json --output data/generated/ci-diagnostic --oracle-output data/oracle/ci-diagnostic
+      - name: Export analysis marts and interactive charts
+        run: python scripts/run.py diagnose --run-dir data/generated/ci-diagnostic --output data/generated/ci-analysis --report-dir .test-tmp/ci-report
+      - name: Generate fully settled training experiment
+        run: python scripts/run.py generate --config configs/train_diagnostic_v0_1.json --customers 600 --output data/generated/ci-experiment --oracle-output data/oracle/ci-experiment
+      - name: Compare all three ITT arms and extend report
+        run: python scripts/run.py compare-arms --run-dir data/generated/ci-experiment --output data/generated/ci-experiment-analysis --report-dir .test-tmp/ci-experiment-report

@@ -1,0 +1,67 @@
+{
+  "artifact_version": "0.1.0",
+  "schema_version": "0.1.0",
+  "simulation_id": "sim-80a04c6cfd9eaf12",
+  "purpose": "public_synthetic_schema_sample_not_effect_evidence",
+  "data_origin": "fully_synthetic",
+  "scenario": "base",
+  "seed": 101,
+  "created_at_utc": "2026-11-08T12:19:43+00:00",
+  "runtime": {
+    "python": "3.14.3",
+    "implementation": "cpython",
+    "package_version": "0.1.0",
+    "third_party_runtime_dependencies": []
+  },
+  "config_sha256": "80a04c6cfd9eaf122a6ec7403a3963b4c927cfb4c3d66e155fcbb1fc6f420dbb",
+  "observed_sha256": {
+    "observed/customers.jsonl": "e31dd5859827ca0e0b2410e1cd500433682e80024237e61bcac5ab827dacc4ab",
+    "observed/orders.jsonl": "bf2f6136ff9f7124a2348d93798fc624c94c0eda3228453c5a776f2fb5e61e76",
+    "observed/order_events.jsonl": "b235c939ed3b485e60612b7dce27583d72b8d31d8e2054c2c6caee9913066334",
+    "observed/order_ledger.jsonl": "9e6aec30aef3956f925aac836f11a26f3b22b3fc340f6b8cbe6addbc2ccafd35",
+    "observed/customer_events.jsonl": "50cf329325d5897d5d827ae2ee855b495251e9dd173f0b2f55c757213b906b13",
+    "observed/assignments.jsonl": "4ffc2c36baaf5f148dd679b3248db7e4a66aa221206ec4aca45e70599263d8bd",
+    "observed/contacts.jsonl": "cf3cb3cc27b13dde14a4949d0155ccde5d04898e66450877a43927bb403fd1c0",
+    "observed/eligibility_audit.jsonl": "40b28278f5e5b8659ad9783173837af518b8bc5b821400fa2b434f25542d3bc1"
+  },
+  "source_sha256": {
+    "src/crm_retention_lab/__init__.py": "05d91e1aa7ce97acb6bffb53f0b8abb44971a5c70173639cde20deef725ffd49",
+    "src/crm_retention_lab/cli.py": "f81c665c48491240fe1e975d690974d159d082302a4169b4a0f509b51cd93e6b",
+    "src/crm_retention_lab/config.py": "a7acab5a678173f04e98d6e4ffa2c20c8de09099c2cb0007918e686905a5ac28",
+    "src/crm_retention_lab/contracts.py": "7fb656a78be573e7e984947b6701eebdb84a81efbbf6d68de38b41a3aaacf0e8",
+    "src/crm_retention_lab/eligibility.py": "b7734ec17d5f899b463596aa6dd3fb7d2ed78061bd710881123a6aac6e972516",
+    "src/crm_retention_lab/finance.py": "afb2cd8876c8ea7918b0d938ed08be4d80cbc2c0877fe8b371b18dc77ccd9412",
+    "src/crm_retention_lab/schema.py": "b524c10ce08b2cae6ac2b719d840f737e18b5115bdf69fb7107286f9e44d3e88",
+    "src/crm_retention_lab/simulation.py": "b0d2f08383e385147bd106e49dea00e912ae19feaef0e01df5a7677d3e2c7a29",
+    "src/crm_retention_lab/storage.py": "59f88a4f71daddcb201a22529af9cfdef395504caf217131aed4155a916f2e42"
+  },
+  "source_identity": "source hashes; no parent repository commit assumed",
+  "oracle": {
+    "written_separately": false,
+    "latent_file_sha256": null,
+    "potential_outcomes_implemented": false
+  },
+  "summary": {
+    "row_counts": {
+      "customers": 20,
+      "orders": 38,
+      "order_events": 79,
+      "order_ledger": 237,
+      "customer_events": 144,
+      "assignments": 16,
+      "contacts": 9,
+      "eligibility_audit": 17
+    },
+    "assigned_by_arm": {
+      "control": 7,
+      "coupon": 5,
+      "info": 4
+    },
+    "eligibility_reasons": {
+      "consent_not_granted": 1
+    },
+    "pending_day14_customers": 3,
+    "profit_window_mature_customers": 11,
+    "no_marketing_effect_estimates_computed": true
+  }
+}

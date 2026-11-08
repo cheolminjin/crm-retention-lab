@@ -1,0 +1,13 @@
+{
+  "quarto_version": "1.11.9",
+  "analysis_manifest_sha256": "43a7d76b0b9a43d2eafbc1b6680201aa17c388be5c1ddb5a5d285ed30dd803ad",
+  "render_inputs_sha256": {
+    "report/index.qmd": "6ac5a2ad6dfcf9134d20b898d75b204291fbf4f74392242d7d464f2a6ab39a55",
+    "report/_quarto.yml": "c565e19fac5ff4ac3da47c34e7d5923588efbf1a1bcae0ed57c2932edc3a62a7",
+    "report/styles.css": "f6c085b4e6a63474565ebaab2fdaf9b3e200eb5ac1208b11ece9fb2fbc01ecc9",
+    "scripts/render_report.py": "995de5e63d9ddcbcdb1d424d0ab68c88200ffaf34854bd7368072459db58cf0d",
+    "report/theme.scss": "ad59b338f7a5efb20fd291dc84b997687fb5e575615a93fa96c1650b444d84ca"
+  },
+  "html_sha256": "fa87861ee823ff42425cc4df55223f0712821939a57abc62504f6135db8dcc46",
+  "output": "reports/CRM_DIAGNOSTIC.html"
+}

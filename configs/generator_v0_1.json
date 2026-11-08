@@ -1,0 +1,65 @@
+{
+  "generator_version": "0.1.0",
+  "status": "synthetic_assumptions_not_fitted_to_market_data",
+  "counterfactual_outputs": "not_implemented_stage1_latent_state_only",
+  "customer": {
+    "channels": ["organic", "paid_search", "paid_social", "referral"],
+    "channel_weights": [0.3, 0.25, 0.3, 0.15],
+    "consumption_grams_daily_min": 8.0,
+    "consumption_grams_daily_max": 28.0,
+    "preference_beta_alpha": 2.0,
+    "preference_beta_beta": 2.0,
+    "price_sensitivity_beta_alpha": 2.0,
+    "price_sensitivity_beta_beta": 2.5,
+    "initial_consent_probability": 0.88,
+    "initial_email_enabled_probability": 0.96,
+    "pre_assignment_revoke_probability": 0.025,
+    "first_discount_probability_intercept": 0.2,
+    "first_discount_probability_sensitivity_weight": 0.5,
+    "first_discount_fraction": 0.1,
+    "first_quantity_two_probability": 0.1
+  },
+  "delivery": {"lead_days_min": 2, "lead_days_max": 5},
+  "behavior": {
+    "session_daily_intercept": 0.12,
+    "session_preference_weight": 0.3,
+    "tip_view_given_session_probability": 0.2,
+    "cart_given_session_probability": 0.16,
+    "pre_delivery_repeat_probability": 0.015,
+    "early_repeat_probability": 0.045,
+    "repeat_quantity_two_probability": 0.12,
+    "daily_base_odds": 0.006,
+    "depletion_peak_odds": 0.028,
+    "depletion_width_days": 12.0,
+    "preference_odds_floor": 0.5,
+    "preference_odds_weight": 1.2,
+    "seasonal_odds_amplitude": 0.15,
+    "natural_unsubscribe_probability_60d": 0.006
+  },
+  "contact": {
+    "delivery_success_probability": 0.94,
+    "open_probability_intercept": 0.22,
+    "open_preference_weight": 0.4,
+    "click_given_open_probability": 0.25,
+    "coupon_redeem_probability_intercept": 0.25,
+    "coupon_redeem_sensitivity_weight": 0.65
+  },
+  "effects": {
+    "coupon_extra_effect_scope": "unredeemed_delivered_coupon_before_expiry_only_information_effect_can_remain",
+    "active_days_after_contact": 14,
+    "info_log_odds_intercept": -0.12,
+    "info_log_odds_preference_weight": 0.8,
+    "coupon_extra_log_odds_intercept": -0.15,
+    "coupon_extra_log_odds_sensitivity_weight": 1.1,
+    "info_unsubscribe_probability_increment": 0.002,
+    "coupon_unsubscribe_probability_increment": 0.007,
+    "coupon_return_probability_increment": 0.012
+  },
+  "refund": {
+    "first_order_probability": 0.025,
+    "repeat_order_probability": 0.04,
+    "days_after_payment_min": 8,
+    "days_after_payment_max": 25,
+    "recovery_fraction": 0.0
+  }
+}

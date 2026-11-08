@@ -1,0 +1,1030 @@
+{
+  "randomization": {
+    "n_assigned": 15284,
+    "chi_square": 0.2867050510337608,
+    "degrees_of_freedom": 2,
+    "p_value": 0.8664485698206169,
+    "alpha": 0.001,
+    "srm_flag": false,
+    "arms": [
+      {
+        "arm": "control",
+        "n": 5105,
+        "expected_probability": 0.3333333333333333,
+        "expected_n": 5094.666666666666,
+        "observed_fraction": 0.3340094216173777
+      },
+      {
+        "arm": "info",
+        "n": 5064,
+        "expected_probability": 0.3333333333333333,
+        "expected_n": 5094.666666666666,
+        "observed_fraction": 0.3313268777806857
+      },
+      {
+        "arm": "coupon",
+        "n": 5115,
+        "expected_probability": 0.3333333333333333,
+        "expected_n": 5094.666666666666,
+        "observed_fraction": 0.3346637006019367
+      }
+    ],
+    "minimum_expected_n": 5094.666666666666,
+    "chi_square_approximation_caution": false
+  },
+  "balance": {
+    "reference_threshold": 0.1,
+    "features": [
+      {
+        "feature": "first_pack_grams",
+        "kind": "categorical",
+        "arm_summaries": {
+          "control": {
+            "n": 5105,
+            "n_missing": 0,
+            "counts": {
+              "1000": 1743,
+              "200": 1517,
+              "500": 1845
+            }
+          },
+          "info": {
+            "n": 5064,
+            "n_missing": 0,
+            "counts": {
+              "1000": 1739,
+              "200": 1490,
+              "500": 1835
+            }
+          },
+          "coupon": {
+            "n": 5115,
+            "n_missing": 0,
+            "counts": {
+              "1000": 1773,
+              "200": 1483,
+              "500": 1859
+            }
+          }
+        },
+        "comparisons": [
+          {
+            "contrast": "info_vs_control",
+            "smd": -0.006410722832831844,
+            "max_abs_smd": 0.006410722832831844,
+            "level": "200",
+            "status": "defined"
+          },
+          {
+            "contrast": "coupon_vs_control",
+            "smd": -0.015871350584840543,
+            "max_abs_smd": 0.015871350584840543,
+            "level": "200",
+            "status": "defined"
+          },
+          {
+            "contrast": "coupon_vs_info",
+            "smd": -0.00946045416033492,
+            "max_abs_smd": 0.00946045416033492,
+            "level": "200",
+            "status": "defined"
+          }
+        ],
+        "undefined_comparisons": [],
+        "max_abs_smd": 0.015871350584840543
+      },
+      {
+        "feature": "first_quantity",
+        "kind": "numeric",
+        "arm_summaries": {
+          "control": {
+            "n": 5105,
+            "mean": 1.0969637610186092,
+            "variance": 0.08757894559086764,
+            "sd": 0.2959374014734664,
+            "n_missing": 0
+          },
+          "info": {
+            "n": 5064,
+            "mean": 1.0920221169036335,
+            "variance": 0.08357054977738629,
+            "sd": 0.28908571354770596,
+            "n_missing": 0
+          },
+          "coupon": {
+            "n": 5115,
+            "mean": 1.1018572825024437,
+            "variance": 0.09150026511854259,
+            "sd": 0.3024901074721991,
+            "n_missing": 0
+          }
+        },
+        "comparisons": [
+          {
+            "contrast": "info_vs_control",
+            "smd": -0.016892683752621887,
+            "max_abs_smd": 0.016892683752621887,
+            "level": null,
+            "status": "defined"
+          },
+          {
+            "contrast": "coupon_vs_control",
+            "smd": 0.01635362035023999,
+            "max_abs_smd": 0.01635362035023999,
+            "level": null,
+            "status": "defined"
+          },
+          {
+            "contrast": "coupon_vs_info",
+            "smd": 0.033242203049882256,
+            "max_abs_smd": 0.033242203049882256,
+            "level": null,
+            "status": "defined"
+          }
+        ],
+        "undefined_comparisons": [],
+        "max_abs_smd": 0.033242203049882256
+      },
+      {
+        "feature": "first_paid_amount_krw",
+        "kind": "numeric",
+        "arm_summaries": {
+          "control": {
+            "n": 5105,
+            "mean": 34430.16650342801,
+            "variance": 276242710.4934311,
+            "sd": 16620.550848074534,
+            "n_missing": 0
+          },
+          "info": {
+            "n": 5064,
+            "mean": 34308.708530805685,
+            "variance": 258062991.49788496,
+            "sd": 16064.339124218119,
+            "n_missing": 0
+          },
+          "coupon": {
+            "n": 5115,
+            "mean": 34789.09090909091,
+            "variance": 282175629.8929854,
+            "sd": 16798.084113760873,
+            "n_missing": 0
+          }
+        },
+        "comparisons": [
+          {
+            "contrast": "info_vs_control",
+            "smd": -0.007430980488483648,
+            "max_abs_smd": 0.007430980488483648,
+            "level": null,
+            "status": "defined"
+          },
+          {
+            "contrast": "coupon_vs_control",
+            "smd": 0.021480191603539298,
+            "max_abs_smd": 0.021480191603539298,
+            "level": null,
+            "status": "defined"
+          },
+          {
+            "contrast": "coupon_vs_info",
+            "smd": 0.029228683295414105,
+            "max_abs_smd": 0.029228683295414105,
+            "level": null,
+            "status": "defined"
+          }
+        ],
+        "undefined_comparisons": [],
+        "max_abs_smd": 0.029228683295414105
+      },
+      {
+        "feature": "first_discount_rate",
+        "kind": "numeric",
+        "arm_summaries": {
+          "control": {
+            "n": 5105,
+            "mean": 0.04270323212536729,
+            "variance": 0.002447236558908686,
+            "sd": 0.04946955183654574,
+            "n_missing": 0
+          },
+          "info": {
+            "n": 5064,
+            "mean": 0.04190363349131122,
+            "variance": 0.0024349296806525306,
+            "sd": 0.04934500664355544,
+            "n_missing": 0
+          },
+          "coupon": {
+            "n": 5115,
+            "mean": 0.04267839687194526,
+            "variance": 0.0024468724995804366,
+            "sd": 0.04946587206934127,
+            "n_missing": 0
+          }
+        },
+        "comparisons": [
+          {
+            "contrast": "info_vs_control",
+            "smd": -0.016183809577012653,
+            "max_abs_smd": 0.016183809577012653,
+            "level": null,
+            "status": "defined"
+          },
+          {
+            "contrast": "coupon_vs_control",
+            "smd": -0.0005020497699281872,
+            "max_abs_smd": 0.0005020497699281872,
+            "level": null,
+            "status": "defined"
+          },
+          {
+            "contrast": "coupon_vs_info",
+            "smd": 0.015681730819916587,
+            "max_abs_smd": 0.015681730819916587,
+            "level": null,
+            "status": "defined"
+          }
+        ],
+        "undefined_comparisons": [],
+        "max_abs_smd": 0.016183809577012653
+      },
+      {
+        "feature": "delivery_lead_days",
+        "kind": "numeric",
+        "arm_summaries": {
+          "control": {
+            "n": 5105,
+            "mean": 3.414160953313745,
+            "variance": 1.2402604091507803,
+            "sd": 1.1136697935881983,
+            "n_missing": 0
+          },
+          "info": {
+            "n": 5064,
+            "mean": 3.4545813586097944,
+            "variance": 1.2443074683942825,
+            "sd": 1.115485306220697,
+            "n_missing": 0
+          },
+          "coupon": {
+            "n": 5115,
+            "mean": 3.4662512218963832,
+            "variance": 1.2664116788254196,
+            "sd": 1.12534958071944,
+            "n_missing": 0
+          }
+        },
+        "comparisons": [
+          {
+            "contrast": "info_vs_control",
+            "smd": 0.03626521267528443,
+            "max_abs_smd": 0.03626521267528443,
+            "level": null,
+            "status": "defined"
+          },
+          {
+            "contrast": "coupon_vs_control",
+            "smd": 0.04652890498842842,
+            "max_abs_smd": 0.04652890498842842,
+            "level": null,
+            "status": "defined"
+          },
+          {
+            "contrast": "coupon_vs_info",
+            "smd": 0.010415537785951594,
+            "max_abs_smd": 0.010415537785951594,
+            "level": null,
+            "status": "defined"
+          }
+        ],
+        "undefined_comparisons": [],
+        "max_abs_smd": 0.04652890498842842
+      },
+      {
+        "feature": "acquisition_channel",
+        "kind": "categorical",
+        "arm_summaries": {
+          "control": {
+            "n": 5105,
+            "n_missing": 0,
+            "counts": {
+              "organic": 1533,
+              "paid_search": 1234,
+              "paid_social": 1538,
+              "referral": 800
+            }
+          },
+          "info": {
+            "n": 5064,
+            "n_missing": 0,
+            "counts": {
+              "organic": 1518,
+              "paid_search": 1213,
+              "paid_social": 1547,
+              "referral": 786
+            }
+          },
+          "coupon": {
+            "n": 5115,
+            "n_missing": 0,
+            "counts": {
+              "organic": 1550,
+              "paid_search": 1341,
+              "paid_social": 1515,
+              "referral": 709
+            }
+          }
+        },
+        "comparisons": [
+          {
+            "contrast": "info_vs_control",
+            "smd": 0.009171044766252717,
+            "max_abs_smd": 0.009171044766252717,
+            "level": "paid_social",
+            "status": "defined"
+          },
+          {
+            "contrast": "coupon_vs_control",
+            "smd": -0.05102362310020165,
+            "max_abs_smd": 0.05102362310020165,
+            "level": "referral",
+            "status": "defined"
+          },
+          {
+            "contrast": "coupon_vs_info",
+            "smd": 0.0522293753630805,
+            "max_abs_smd": 0.0522293753630805,
+            "level": "paid_search",
+            "status": "defined"
+          }
+        ],
+        "undefined_comparisons": [],
+        "max_abs_smd": 0.0522293753630805
+      },
+      {
+        "feature": "sessions_d0_d13",
+        "kind": "numeric",
+        "arm_summaries": {
+          "control": {
+            "n": 5105,
+            "mean": 2.847012732615083,
+            "variance": 2.6876012821654354,
+            "sd": 1.6393905215553235,
+            "n_missing": 0
+          },
+          "info": {
+            "n": 5064,
+            "mean": 2.8321484992101107,
+            "variance": 2.647309149580998,
+            "sd": 1.6270553615599557,
+            "n_missing": 0
+          },
+          "coupon": {
+            "n": 5115,
+            "mean": 2.8283479960899314,
+            "variance": 2.5360362809086743,
+            "sd": 1.5924937302572573,
+            "n_missing": 0
+          }
+        },
+        "comparisons": [
+          {
+            "contrast": "info_vs_control",
+            "smd": -0.009101101289503784,
+            "max_abs_smd": 0.009101101289503784,
+            "level": null,
+            "status": "defined"
+          },
+          {
+            "contrast": "coupon_vs_control",
+            "smd": -0.011549158548584045,
+            "max_abs_smd": 0.011549158548584045,
+            "level": null,
+            "status": "defined"
+          },
+          {
+            "contrast": "coupon_vs_info",
+            "smd": -0.0023607555270625464,
+            "max_abs_smd": 0.0023607555270625464,
+            "level": null,
+            "status": "defined"
+          }
+        ],
+        "undefined_comparisons": [],
+        "max_abs_smd": 0.011549158548584045
+      },
+      {
+        "feature": "tip_views_d0_d13",
+        "kind": "numeric",
+        "arm_summaries": {
+          "control": {
+            "n": 5105,
+            "mean": 0.574926542605289,
+            "variance": 0.5543868725418255,
+            "sd": 0.7445716033678866,
+            "n_missing": 0
+          },
+          "info": {
+            "n": 5064,
+            "mean": 0.5588467614533965,
+            "variance": 0.5527283557351151,
+            "sd": 0.7434570301874313,
+            "n_missing": 0
+          },
+          "coupon": {
+            "n": 5115,
+            "mean": 0.5655913978494623,
+            "variance": 0.5590035365704938,
+            "sd": 0.7476653907801898,
+            "n_missing": 0
+          }
+        },
+        "comparisons": [
+          {
+            "contrast": "info_vs_control",
+            "smd": -0.021612187129446563,
+            "max_abs_smd": 0.021612187129446563,
+            "level": null,
+            "status": "defined"
+          },
+          {
+            "contrast": "coupon_vs_control",
+            "smd": -0.012511584593433545,
+            "max_abs_smd": 0.012511584593433545,
+            "level": null,
+            "status": "defined"
+          },
+          {
+            "contrast": "coupon_vs_info",
+            "smd": 0.00904635251946593,
+            "max_abs_smd": 0.00904635251946593,
+            "level": null,
+            "status": "defined"
+          }
+        ],
+        "undefined_comparisons": [],
+        "max_abs_smd": 0.021612187129446563
+      },
+      {
+        "feature": "cart_events_d0_d13",
+        "kind": "numeric",
+        "arm_summaries": {
+          "control": {
+            "n": 5105,
+            "mean": 0.46895200783545543,
+            "variance": 0.4779249398984952,
+            "sd": 0.6913211553963144,
+            "n_missing": 0
+          },
+          "info": {
+            "n": 5064,
+            "mean": 0.45003949447077407,
+            "variance": 0.4351886217857211,
+            "sd": 0.6596882762227332,
+            "n_missing": 0
+          },
+          "coupon": {
+            "n": 5115,
+            "mean": 0.4541544477028348,
+            "variance": 0.4458348099308398,
+            "sd": 0.6677086265212093,
+            "n_missing": 0
+          }
+        },
+        "comparisons": [
+          {
+            "contrast": "info_vs_control",
+            "smd": -0.02798993237858322,
+            "max_abs_smd": 0.02798993237858322,
+            "level": null,
+            "status": "defined"
+          },
+          {
+            "contrast": "coupon_vs_control",
+            "smd": -0.021773367042830644,
+            "max_abs_smd": 0.021773367042830644,
+            "level": null,
+            "status": "defined"
+          },
+          {
+            "contrast": "coupon_vs_info",
+            "smd": 0.006199921231951383,
+            "max_abs_smd": 0.006199921231951383,
+            "level": null,
+            "status": "defined"
+          }
+        ],
+        "undefined_comparisons": [],
+        "max_abs_smd": 0.02798993237858322
+      },
+      {
+        "feature": "days_since_last_session",
+        "kind": "numeric",
+        "arm_summaries": {
+          "control": {
+            "n": 4821,
+            "mean": 6.083765470510959,
+            "variance": 9.775853461213183,
+            "sd": 3.1266361254890507,
+            "n_missing": 284
+          },
+          "info": {
+            "n": 4783,
+            "mean": 6.1160185378772045,
+            "variance": 9.399467753315832,
+            "sd": 3.06585514225898,
+            "n_missing": 281
+          },
+          "coupon": {
+            "n": 4830,
+            "mean": 6.0710662525879915,
+            "variance": 9.384880032194209,
+            "sd": 3.0634751561248557,
+            "n_missing": 285
+          }
+        },
+        "comparisons": [
+          {
+            "contrast": "info_vs_control",
+            "smd": 0.010416329215798912,
+            "max_abs_smd": 0.010416329215798912,
+            "level": null,
+            "status": "defined"
+          },
+          {
+            "contrast": "coupon_vs_control",
+            "smd": -0.004102852542249978,
+            "max_abs_smd": 0.004102852542249978,
+            "level": null,
+            "status": "defined"
+          },
+          {
+            "contrast": "coupon_vs_info",
+            "smd": -0.014667926090482307,
+            "max_abs_smd": 0.014667926090482307,
+            "level": null,
+            "status": "defined"
+          }
+        ],
+        "undefined_comparisons": [],
+        "max_abs_smd": 0.014667926090482307
+      },
+      {
+        "feature": "first_delivery_month",
+        "kind": "categorical",
+        "arm_summaries": {
+          "control": {
+            "n": 5105,
+            "n_missing": 0,
+            "counts": {
+              "1": 925,
+              "2": 856,
+              "3": 974,
+              "4": 909,
+              "5": 955,
+              "6": 486
+            }
+          },
+          "info": {
+            "n": 5064,
+            "n_missing": 0,
+            "counts": {
+              "1": 931,
+              "2": 806,
+              "3": 958,
+              "4": 917,
+              "5": 960,
+              "6": 492
+            }
+          },
+          "coupon": {
+            "n": 5115,
+            "n_missing": 0,
+            "counts": {
+              "1": 988,
+              "2": 848,
+              "3": 991,
+              "4": 930,
+              "5": 857,
+              "6": 501
+            }
+          }
+        },
+        "comparisons": [
+          {
+            "contrast": "info_vs_control",
+            "smd": -0.023031175420755574,
+            "max_abs_smd": 0.023031175420755574,
+            "level": "2",
+            "status": "defined"
+          },
+          {
+            "contrast": "coupon_vs_control",
+            "smd": -0.05113381710824731,
+            "max_abs_smd": 0.05113381710824731,
+            "level": "5",
+            "status": "defined"
+          },
+          {
+            "contrast": "coupon_vs_info",
+            "smd": -0.057532454741196365,
+            "max_abs_smd": 0.057532454741196365,
+            "level": "5",
+            "status": "defined"
+          }
+        ],
+        "undefined_comparisons": [],
+        "max_abs_smd": 0.057532454741196365
+      },
+      {
+        "feature": "days_since_last_session__missing",
+        "kind": "missing_indicator",
+        "arm_summaries": {
+          "control": {
+            "n": 5105,
+            "mean": 0.05563173359451518,
+            "variance": 0.052547137080555965,
+            "sd": 0.22923162321232202,
+            "n_missing": 0
+          },
+          "info": {
+            "n": 5064,
+            "mean": 0.055489731437598735,
+            "variance": 0.05242097283547991,
+            "sd": 0.22895626839088706,
+            "n_missing": 0
+          },
+          "coupon": {
+            "n": 5115,
+            "mean": 0.05571847507331378,
+            "variance": 0.05262421482285991,
+            "sd": 0.2293996835718391,
+            "n_missing": 0
+          }
+        },
+        "comparisons": [
+          {
+            "contrast": "info_vs_control",
+            "smd": -0.0006198423567105811,
+            "max_abs_smd": 0.0006198423567105811,
+            "level": null,
+            "status": "defined"
+          },
+          {
+            "contrast": "coupon_vs_control",
+            "smd": 0.00037826232833123246,
+            "max_abs_smd": 0.00037826232833123246,
+            "level": null,
+            "status": "defined"
+          },
+          {
+            "contrast": "coupon_vs_info",
+            "smd": 0.0009981043235001332,
+            "max_abs_smd": 0.0009981043235001332,
+            "level": null,
+            "status": "defined"
+          }
+        ],
+        "undefined_comparisons": [],
+        "max_abs_smd": 0.0009981043235001332
+      }
+    ],
+    "any_above_reference": false,
+    "has_undefined_smd": false
+  },
+  "delivery_funnel": {
+    "arms": [
+      {
+        "arm": "control",
+        "n_assigned": 5105,
+        "counts": {
+          "assigned": 5105,
+          "attempted": 0,
+          "reached": 0,
+          "opened": 0,
+          "clicked": 0,
+          "coupon_issued": 0,
+          "redeemed": 0
+        },
+        "applicable": {
+          "assigned": true,
+          "attempted": false,
+          "reached": false,
+          "opened": false,
+          "clicked": false,
+          "coupon_issued": false,
+          "redeemed": false
+        },
+        "rates_per_assigned": {
+          "assigned": 1.0,
+          "attempted": null,
+          "reached": null,
+          "opened": null,
+          "clicked": null,
+          "coupon_issued": null,
+          "redeemed": null
+        }
+      },
+      {
+        "arm": "info",
+        "n_assigned": 5064,
+        "counts": {
+          "assigned": 5064,
+          "attempted": 5064,
+          "reached": 4757,
+          "opened": 2066,
+          "clicked": 528,
+          "coupon_issued": 0,
+          "redeemed": 0
+        },
+        "applicable": {
+          "assigned": true,
+          "attempted": true,
+          "reached": true,
+          "opened": true,
+          "clicked": true,
+          "coupon_issued": false,
+          "redeemed": false
+        },
+        "rates_per_assigned": {
+          "assigned": 1.0,
+          "attempted": 1.0,
+          "reached": 0.9393759873617693,
+          "opened": 0.4079778830963665,
+          "clicked": 0.10426540284360189,
+          "coupon_issued": null,
+          "redeemed": null
+        }
+      },
+      {
+        "arm": "coupon",
+        "n_assigned": 5115,
+        "counts": {
+          "assigned": 5115,
+          "attempted": 5115,
+          "reached": 4808,
+          "opened": 1980,
+          "clicked": 479,
+          "coupon_issued": 4808,
+          "redeemed": 837
+        },
+        "applicable": {
+          "assigned": true,
+          "attempted": true,
+          "reached": true,
+          "opened": true,
+          "clicked": true,
+          "coupon_issued": true,
+          "redeemed": true
+        },
+        "rates_per_assigned": {
+          "assigned": 1.0,
+          "attempted": 1.0,
+          "reached": 0.939980449657869,
+          "opened": 0.3870967741935484,
+          "clicked": 0.09364613880742913,
+          "coupon_issued": 0.939980449657869,
+          "redeemed": 0.16363636363636364
+        }
+      }
+    ],
+    "stages": [
+      "assigned",
+      "attempted",
+      "reached",
+      "opened",
+      "clicked",
+      "coupon_issued",
+      "redeemed"
+    ],
+    "denominator": "all_originally_assigned_customers",
+    "strictly_nested": false
+  },
+  "finance_reconciliation": {
+    "status": "passed",
+    "n_customers_checked": 15284,
+    "mismatch_customers": 0,
+    "mismatch_counts": {},
+    "components_order": [
+      "net_item_revenue",
+      "customer_shipping_charge",
+      "refund",
+      "cogs",
+      "cogs_recovery",
+      "outbound_shipping",
+      "fulfillment",
+      "payment_fee",
+      "return_handling",
+      "send_cost"
+    ],
+    "arms": [
+      {
+        "arm": "control",
+        "n": 5105,
+        "components_total_krw": {
+          "net_item_revenue": 174251000,
+          "customer_shipping_charge": 9876000,
+          "refund": -7960000,
+          "cogs": -77457000,
+          "cogs_recovery": 0,
+          "outbound_shipping": -15537000,
+          "fulfillment": -3625300,
+          "payment_fee": -4603175,
+          "return_handling": -693000,
+          "send_cost": 0
+        },
+        "components_mean_krw": {
+          "net_item_revenue": 34133.3986287953,
+          "customer_shipping_charge": 1934.5739471106758,
+          "refund": -1559.2556317335946,
+          "cogs": -15172.77179236043,
+          "cogs_recovery": 0.0,
+          "outbound_shipping": -3043.486777668952,
+          "fulfillment": -710.1469147894221,
+          "payment_fee": -901.6993143976493,
+          "return_handling": -135.7492654260529,
+          "send_cost": 0.0
+        },
+        "total_profit_krw": 74251525,
+        "mean_profit_krw": 14544.862879529872,
+        "mart_total_profit_krw": 74251525
+      },
+      {
+        "arm": "info",
+        "n": 5064,
+        "components_total_krw": {
+          "net_item_revenue": 182882000,
+          "customer_shipping_charge": 10116000,
+          "refund": -7993000,
+          "cogs": -81362000,
+          "cogs_recovery": 0,
+          "outbound_shipping": -16128000,
+          "fulfillment": -3763200,
+          "payment_fee": -4824950,
+          "return_handling": -672000,
+          "send_cost": -101280
+        },
+        "components_mean_krw": {
+          "net_item_revenue": 36114.13902053713,
+          "customer_shipping_charge": 1997.6303317535544,
+          "refund": -1578.396524486572,
+          "cogs": -16066.745655608214,
+          "cogs_recovery": 0.0,
+          "outbound_shipping": -3184.834123222749,
+          "fulfillment": -743.127962085308,
+          "payment_fee": -952.794233807267,
+          "return_handling": -132.70142180094786,
+          "send_cost": -20.0
+        },
+        "total_profit_krw": 78153570,
+        "mean_profit_krw": 15433.16943127962,
+        "mart_total_profit_krw": 78153570
+      },
+      {
+        "arm": "coupon",
+        "n": 5115,
+        "components_total_krw": {
+          "net_item_revenue": 202981000,
+          "customer_shipping_charge": 11151000,
+          "refund": -8528000,
+          "cogs": -91551000,
+          "cogs_recovery": 0,
+          "outbound_shipping": -17976000,
+          "fulfillment": -4194400,
+          "payment_fee": -5353300,
+          "return_handling": -783000,
+          "send_cost": -102300
+        },
+        "components_mean_krw": {
+          "net_item_revenue": 39683.47996089931,
+          "customer_shipping_charge": 2180.058651026393,
+          "refund": -1667.2531769305963,
+          "cogs": -17898.533724340177,
+          "cogs_recovery": 0.0,
+          "outbound_shipping": -3514.369501466276,
+          "fulfillment": -820.019550342131,
+          "payment_fee": -1046.5884652981426,
+          "return_handling": -153.0791788856305,
+          "send_cost": -20.0
+        },
+        "total_profit_krw": 85644000,
+        "mean_profit_krw": 16743.695014662757,
+        "mart_total_profit_krw": 85644000
+      }
+    ],
+    "comparisons": [
+      {
+        "contrast": "info_vs_control",
+        "components_mean_difference_krw": {
+          "net_item_revenue": 1980.740391741827,
+          "customer_shipping_charge": 63.056384642878584,
+          "refund": -19.14089275297738,
+          "cogs": -893.9738632477838,
+          "cogs_recovery": 0.0,
+          "outbound_shipping": -141.3473455537969,
+          "fulfillment": -32.9810472958859,
+          "payment_fee": -51.09491940961766,
+          "return_handling": 3.047843625105031,
+          "send_cost": -20.0
+        },
+        "profit_mean_difference_krw": 888.3065517497489
+      },
+      {
+        "contrast": "coupon_vs_control",
+        "components_mean_difference_krw": {
+          "net_item_revenue": 5550.081332104011,
+          "customer_shipping_charge": 245.4847039157171,
+          "refund": -107.99754519700173,
+          "cogs": -2725.761931979747,
+          "cogs_recovery": 0.0,
+          "outbound_shipping": -470.8827237973237,
+          "fulfillment": -109.87263555270886,
+          "payment_fee": -144.8891509004933,
+          "return_handling": -17.329913459577625,
+          "send_cost": -20.0
+        },
+        "profit_mean_difference_krw": 2198.832135132885
+      },
+      {
+        "contrast": "coupon_vs_info",
+        "components_mean_difference_krw": {
+          "net_item_revenue": 3569.3409403621845,
+          "customer_shipping_charge": 182.4283192728385,
+          "refund": -88.85665244402435,
+          "cogs": -1831.788068731963,
+          "cogs_recovery": 0.0,
+          "outbound_shipping": -329.5353782435268,
+          "fulfillment": -76.89158825682296,
+          "payment_fee": -93.79423149087563,
+          "return_handling": -20.377757084682656,
+          "send_cost": 0.0
+        },
+        "profit_mean_difference_krw": 1310.525583383136
+      }
+    ],
+    "supporting_accounting": {
+      "arms": [
+        {
+          "arm": "control",
+          "n": 5105,
+          "totals_krw": {
+            "list_subtotal_krw": 174251000,
+            "other_discount_krw": 0,
+            "crm_coupon_discount_krw": 0
+          },
+          "means_krw": {
+            "list_subtotal_krw": 34133.3986287953,
+            "other_discount_krw": 0.0,
+            "crm_coupon_discount_krw": 0.0
+          }
+        },
+        {
+          "arm": "info",
+          "n": 5064,
+          "totals_krw": {
+            "list_subtotal_krw": 182882000,
+            "other_discount_krw": 0,
+            "crm_coupon_discount_krw": 0
+          },
+          "means_krw": {
+            "list_subtotal_krw": 36114.13902053713,
+            "other_discount_krw": 0.0,
+            "crm_coupon_discount_krw": 0.0
+          }
+        },
+        {
+          "arm": "coupon",
+          "n": 5115,
+          "totals_krw": {
+            "list_subtotal_krw": 205492000,
+            "other_discount_krw": 0,
+            "crm_coupon_discount_krw": 2511000
+          },
+          "means_krw": {
+            "list_subtotal_krw": 40174.38905180841,
+            "other_discount_krw": 0.0,
+            "crm_coupon_discount_krw": 490.90909090909093
+          }
+        }
+      ],
+      "included_in_waterfall": false
+    }
+  },
+  "methods": {
+    "data_origin": "fully_synthetic",
+    "analysis_scope": "train",
+    "oracle_used": false,
+    "population": "Every original train assignment; all must have 90-day settled labels.",
+    "srm": "Pearson chi-square against configured probabilities; alpha=0.001 is a diagnostic flag, never a sample-removal rule.",
+    "smd": "(mean_t - mean_r) / sqrt((sample_variance_t + sample_variance_r) / 2); no p-values.",
+    "categorical_smd": "One-hot sample-variance SMD for each level; report signed value at maximum absolute difference.",
+    "missingness": "Numeric last-session SMD uses observed values; its missingness indicator is reported separately.",
+    "smd_reference": "Absolute 0.1 is a descriptive reference, not a randomization test or causal guarantee.",
+    "funnel": "Distinct customer counts within the 60-day window; every rate uses original arm assignments. Coupon redemption need not follow a recorded open or click.",
+    "source_cutoff": "Payment [assignment, assignment+60d); payment and ledger records strictly before settlement; snapshot no later than source/train readout.",
+    "finance": "Signed integer ledger components plus negative send costs; initial order excluded. Net item revenue already contains coupon discounts.",
+    "supporting_accounting": "Gross list subtotal and discounts are supplementary identities, not additional waterfall costs.",
+    "mismatch_policy": "Public mismatch counts have no customer identifiers; a mismatch must stop report publication."
+  }
+}

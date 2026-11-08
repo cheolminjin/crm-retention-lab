@@ -1,0 +1,113 @@
+{
+  "design_version": "0.1.0",
+  "status": "design_only_not_executable_pipeline_config",
+  "project_slug": "crm-retention-lab",
+  "data_origin": "fully_synthetic",
+  "timezone": "Asia/Seoul",
+  "currency": "KRW",
+  "assumptions_are_not_market_benchmarks": true,
+  "population": {
+    "first_delivery_customers": 60000,
+    "first_delivery_start_inclusive": "2025-01-01T00:00:00+09:00",
+    "first_delivery_end_exclusive": "2026-08-01T00:00:00+09:00",
+    "observation_end_exclusive": "2026-08-01T00:00:00+09:00",
+    "one_sku_per_order": true,
+    "first_delivery_daily_slot_local": "09:00:00",
+    "operational_reporting_lag_days": 0,
+    "max_analytics_reporting_lag_days": 7,
+    "max_order_adjustment_recording_days_after_payment": 30
+  },
+  "experiment": {
+    "anchor": "first_order_delivered_at",
+    "assignment_offset_days": 14,
+    "randomization_unit": "customer_id",
+    "max_assignments_per_customer": 1,
+    "arms": [
+      { "id": "control", "probability": 0.3333333333333333 },
+      { "id": "info", "probability": 0.3333333333333333 },
+      { "id": "coupon", "probability": 0.3333333333333333 }
+    ],
+    "outcome_horizon_days": 60,
+    "settlement_lag_days": 30,
+    "interval_convention": "start_inclusive_end_exclusive",
+    "primary_outcome": "contribution_profit_60d_krw",
+    "analysis_principle": "intention_to_treat"
+  },
+  "offer": {
+    "channel": "email",
+    "attempts_per_customer": 1,
+    "send_cost_krw_per_attempt": 20,
+    "coupon_discount_krw": 3000,
+    "coupon_min_list_subtotal_krw": 25000,
+    "coupon_valid_days": 14,
+    "coupon_max_redemptions": 1,
+    "allow_stacking": false,
+    "info_content_shared_between_active_arms": true
+  },
+  "catalog": [
+    { "sku": "coffee_200g", "grams": 200, "list_price_krw": 14000, "unit_cogs_krw": 5500 },
+    { "sku": "coffee_500g", "grams": 500, "list_price_krw": 28000, "unit_cogs_krw": 12000 },
+    { "sku": "coffee_1000g", "grams": 1000, "list_price_krw": 49000, "unit_cogs_krw": 23000 }
+  ],
+  "unit_economics": {
+    "outbound_shipping_krw_per_order": 3000,
+    "fulfillment_krw_per_order": 700,
+    "customer_shipping_charge_krw": 3000,
+    "free_shipping_min_subtotal_krw": 40000,
+    "shipping_threshold_basis": "pre_coupon_subtotal",
+    "payment_fee_rate": 0.025,
+    "payment_fee_basis": "initial_collected_payment_including_shipping",
+    "payment_fee_recovered_on_refund": false,
+    "return_handling_krw_per_return": 3000
+  },
+  "policy_constraints": {
+    "rollout_eligible_customers": 10000,
+    "budget_reservation_cap_krw_per_10000": 3000000,
+    "max_contact_fraction": 0.3,
+    "coupon_budget_reservation": "full_face_value_plus_send_cost",
+    "fixed_setup_cost_krw_per_rollout": 100000,
+    "fixed_setup_cost_trigger": "at_least_one_contact_in_rollout",
+    "reservation_budget_scope": "variable_cost_only_fixed_setup_is_separate",
+    "allocation_batch": "same_assigned_at_daily_slot",
+    "batch_caps": "proportional_to_batch_eligible_count_floor_integer_limits"
+  },
+  "splits": {
+    "timestamp_column": "assigned_at",
+    "train": { "start_inclusive": "2025-01-15T00:00:00+09:00", "end_exclusive": "2025-07-01T00:00:00+09:00" },
+    "train_labels_available_by": "2025-10-01T00:00:00+09:00",
+    "validation": { "start_inclusive": "2025-10-01T00:00:00+09:00", "end_exclusive": "2025-12-01T00:00:00+09:00" },
+    "policy_lock_at": "2026-03-01T00:00:00+09:00",
+    "final_test": { "start_inclusive": "2026-03-01T00:00:00+09:00", "end_exclusive": "2026-05-01T00:00:00+09:00" },
+    "final_readout_at": "2026-08-01T00:00:00+09:00",
+    "monitoring_only": { "start_inclusive": "2026-05-01T00:00:00+09:00", "end_exclusive": "2026-08-01T00:00:00+09:00" },
+    "unlisted_assignment_periods": "embargo_not_used_for_model_selection_or_final_claims"
+  },
+  "inference": {
+    "confidence_level": 0.95,
+    "arm_comparison_adjustment": "holm_for_all_three_pairwise_arm_comparisons",
+    "prespecified_arm_comparisons": ["info_vs_control", "coupon_vs_control", "coupon_vs_info"],
+    "primary_policy_comparison": "locked_policy_vs_control",
+    "guardrail_policy_estimator": "ipw_for_locked_policy_vs_control",
+    "bootstrap_unit": "customer_id",
+    "bootstrap_repetitions": 2000,
+    "known_assignment_probabilities": true,
+    "guardrail_max_increase_unsubscribe_pp": 0.5,
+    "guardrail_max_increase_refund_customer_pp": 1.0,
+    "guardrail_familywise_one_sided_alpha": 0.05,
+    "guardrail_bonferroni_individual_one_sided_confidence": 0.975
+  },
+  "reproducibility": {
+    "base_seed": 20261108,
+    "independent_world_seeds": [1101, 2202, 3303, 4404, 5505],
+    "rng_streams": ["customer", "assignment", "purchase", "contact", "refund", "bootstrap"],
+    "oracle_access": "post_policy_lock_separate_evaluation_only"
+  },
+  "scenario_ids": ["base", "no_behavior_effect", "uniform_effect", "cost_stress", "response_shift", "lower_demand", "a_a_zero_cost"],
+  "unresolved_before_generation": [
+    "latent_distribution_and_hazard_coefficients",
+    "treatment_effect_functions_and_noise",
+    "delivery_missingness_refund_and_contact_probability_parameters",
+    "pilot_based_power_and_minimum_detectable_effect",
+    "compatible_python_environment_and_dependency_lock"
+  ]
+}
