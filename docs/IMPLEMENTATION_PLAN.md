@@ -9,7 +9,7 @@ Status: **diagnosis, three-arm comparison, policy selection, and independent eva
 - [x] Versioned design/generator JSON, references, and `.gitignore` for generated/private/large outputs.
 - [x] Source-checkout Python package/CLI and dedicated environment.
 - [x] 1,000-customer development data, 20-customer public sample, ledger/eligibility/storage validation.
-- [x] GitHub Actions workflow prepared; remote execution pending.
+- [x] GitHub Actions workflow passed all five jobs on the initial publication commit.
 - [x] Python 3.14.3 environment and lock of installed analysis dependencies.
 - [x] Separate 20,000-customer training profile and assignment-time feature/outcome marts.
 - [x] Control cohorts, Kaplan–Meier, segment diagnostics, and calculation checks.
@@ -22,7 +22,8 @@ Status: **diagnosis, three-arm comparison, policy selection, and independent eva
 - [x] HGB λ=0.5 locked before independent final evaluation of 15,363 customers.
 - [x] Integrated numerical/visual validation: [stage-4 record](../reports/STAGE_4_VALIDATION.md).
 - [x] Local independent Git repository and English public documentation/report preparation.
-- [ ] Final campaign presentation, remote CI, license selection, and GitHub publication.
+- [x] Public GitHub repository, initial upload, and remote CI verification on 2026-11-09.
+- [ ] Final campaign presentation and license selection.
 
 This project is separate from the parent employment-management application and shares none of its code, database, or dependency files. Relative paths allow this folder alone to become a repository.
 
@@ -42,7 +43,7 @@ This project is separate from the parent employment-management application and s
 | Validation | unittest, lifelines comparisons, `pip check` | Data/mart/diagnostic/report contracts and dependencies |
 | Dependencies | Optional `pyproject.toml` extras and `requirements-analysis.lock.txt` | Generator dependency-free; full lock from Windows / Python 3.14.3 |
 
-The lock includes transitive packages such as pandas, NumPy, and SciPy. Other operating systems and remote CI are unverified. A dedicated `.venv` leaves the parent app unchanged. Additional causal libraries such as EconML are future options only when a needed estimator justifies them; V1 does not add multiple frameworks or deep learning merely for complexity.
+The lock includes transitive packages such as pandas, NumPy, and SciPy. A fresh Linux analysis installation and Windows/Linux core checks passed in [remote CI](GITHUB_PREPARATION.md#ci); macOS remains unverified. A dedicated `.venv` leaves the parent app unchanged. Additional causal libraries such as EconML are future options only when a needed estimator justifies them; V1 does not add multiple frameworks or deep learning merely for complexity.
 
 ## 3. Implemented structure and future files
 
@@ -134,7 +135,7 @@ Source manifests record code/config/source hashes, Python, seeds, schemas, count
 | 3. Average experiment: complete except pilot power | Effects, accounting, multiplicity, side effects | All 15,284 ITT outcomes reconcile; independent pilot pending |
 | 4. Policy selection/lock: complete | Baselines, T-learners, allocation | 15,167 validation customers select HGB λ=0.5; hashes locked |
 | 5. Independent final evaluation: complete | DR/IPW, intervals, side effects, report | 15,363 final customers; KRW +281.94/customer, interval includes 0; repeated scenarios/A/A calibration pending |
-| 6. Publication/presentation: in preparation | Proposal, messages, slides, README | Trace numbers to outputs; clean remote installation/publication pending |
+| 6. Publication complete; presentation pending | Proposal, messages, slides, README | Public repository and fresh Linux analysis installation verified; final campaign presentation pending |
 
 Stage 2 used a **training-only profile**, not the full 60,000-customer design: deliveries 2025-01-01–2025-06-16, assignments 2025-01-15–2025-06-30, cutoff 2025-10-01. No validation/final customers were generated then; all 5,105 controls passed 90-day freeze. Policy selection later used an independent validation seed; final generation followed the actual UTC lock.
 
@@ -161,7 +162,7 @@ Record reasons for data/design corrections. If a design changes after test outco
 | Behavioral effects without profit | Zero behavior plus discount/send costs | Generator checks done; effect evaluation pending |
 | Seed/structure sensitivity | Fixed independent seeds plus structural scenarios | Broader sensitivity work pending |
 
-The stage-4 suite had 218 tests: Windows / Python 3.14.3 **214 passed, 4 skipped**; dependency-free Python 3.10.7 **133 passed, 85 skipped**. Optional model/chart tests skip without dependencies. Remote Actions has not run. A single A/A p-value below 0.05 is not by itself failure; assess repeated false-positive rates and sampling error. A few sensitivity seeds differ from hundreds of calibration repetitions.
+The stage-4 suite had 218 tests: Windows / Python 3.14.3 **214 passed, 4 skipped**; dependency-free Python 3.10.7 **133 passed, 85 skipped**. Optional model/chart tests skip without dependencies. The later [publication CI run](GITHUB_PREPARATION.md#ci) passed all 218 tests on Linux with analysis dependencies. A single A/A p-value below 0.05 is not by itself failure; assess repeated false-positive rates and sampling error. A few sensitivity seeds differ from hundreds of calibration repetitions.
 
 ## 7. Portfolio narrative
 
@@ -184,14 +185,14 @@ Current diagnostics support items 3–4; the average experiment supports item 6.
 
 - [x] Independent local repository containing this project only.
 - [x] Locked Windows / Python 3.14.3 dependencies and local `pip check`.
-- [ ] Actual installation/core flow in remote GitHub Actions.
-- [ ] Fresh remote environment verification of documented installation commands.
+- [x] Actual installation/core flow in remote GitHub Actions.
+- [x] Fresh Linux installation from the documented analysis lock; numerical/chart tests and diagnostic/experiment smoke flows passed.
 - [x] Small synthetic sample and generation instructions.
 - [x] Exclusion rules for full generated data, models, secrets, and temporary outputs.
 - [x] Tables/charts linked to source IDs and aggregate/render hashes.
 - [x] Reference scope documented; no reference code/data copied.
 - [ ] Select public licenses and add accurate license files.
 - [x] English README, public documentation, and report preparation.
-- [ ] Create/connect a remote, choose visibility, commit, and publish when specified.
+- [x] Create/connect the public remote, commit, and publish to `main`.
 
-See [GITHUB_PREPARATION.md](GITHUB_PREPARATION.md) for current release boundaries. Remote publication and the final campaign presentation remain incomplete.
+See [GITHUB_PREPARATION.md](GITHUB_PREPARATION.md) for current release boundaries and CI scope. The final campaign presentation and license selection remain incomplete.

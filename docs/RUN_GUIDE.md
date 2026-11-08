@@ -17,7 +17,7 @@ Source-checkout execution needs no package installation for stage 1. `.venv` is 
 .\.venv\Scripts\python.exe -m pip check
 ```
 
-The lock records actual Windows / Python 3.14.3 dependencies; other operating systems await CI verification. Install [Quarto separately](https://quarto.org/docs/get-started/) (validated version 1.11.9). SVG export also needs Chrome/Chromium. Use an ASCII-only Windows Quarto installation path: this environment encountered Pandoc Lua loading failures under a Korean path, resolved with the same distribution in an ASCII path.
+The lock records actual Windows / Python 3.14.3 dependencies; a fresh Linux / Python 3.14.10 installation also passed the [initial GitHub Actions run](https://github.com/cheolminjin/crm-retention-lab/actions/runs/42496278666). Install [Quarto separately](https://quarto.org/docs/get-started/) (validated version 1.11.9). SVG export also needs Chrome/Chromium. Use an ASCII-only Windows Quarto installation path: this environment encountered Pandoc Lua loading failures under a Korean path, resolved with the same distribution in an ASCII path.
 
 ## 2. Tests
 
@@ -33,7 +33,7 @@ macOS/Linux equivalent:
 .venv/bin/python scripts/run.py test
 ```
 
-Both use the same source entry point. Actual local execution was on Windows; the prepared GitHub Actions workflow is intended to check Linux later.
+Both use the same source entry point. GitHub Actions passed core checks on Windows/Linux with Python 3.10/3.14 and all 218 tests in the Linux analysis job. See [publication verification](GITHUB_PREPARATION.md#ci) for CI scope; full final policy reproduction and HTML/PDF rendering were verified locally.
 
 ## 3. Development data
 
@@ -89,7 +89,7 @@ This generates a separate 20-customer synthetic sample without saving oracle fil
 - Customers not yet at D+14 have no assignment/eligibility decision. Final profit is `None` until 90-day settlement.
 - Oracle contains latent traits, not action-specific potential outcomes or true average effects.
 - Training-only fitting, validation selection, policy locking, and independent final evaluation are implemented. Real-market rollout and independent pilot power remain separate work.
-- Remote GitHub Actions, package distribution, and real message sending have not occurred.
+- Remote GitHub Actions passed; package distribution and real message sending have not occurred.
 
 ## 8. Training-only diagnosis and HTML
 

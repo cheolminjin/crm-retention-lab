@@ -1,5 +1,7 @@
 # English release validation
 
+This record and its JSON manifest describe the pre-publication checkpoint. The recorded README hash predates the later publication links and CI badge. See [GitHub publication](../docs/GITHUB_PREPARATION.md) for the repository and subsequent remote checks.
+
 Verified 2026-11-09. The README, public design/method/result/run documents, historical validation records, generated Quarto source, chart labels/hover/annotations, HTML, PDF, and public preview images are in English. The README structure was informed by [four public examples](../docs/README_REFERENCE_NOTES.md). No hiring outcome is inferred from those examples.
 
 ## Preserved analysis
@@ -44,4 +46,4 @@ Relative documentation/image links were checked. Public candidate scanning found
 
 Machine-readable results are in [ENGLISH_RELEASE_VALIDATION.json](ENGLISH_RELEASE_VALIDATION.json). Artifact hashes are in the [analysis manifest](../report/data/analysis_manifest.json), [HTML manifest](RENDER_MANIFEST.json), and [PDF manifest](../output/pdf/PDF_MANIFEST.json). The private pre-translation snapshot and body diff remain in Git-excluded review storage.
 
-No additional interpretation requires author confirmation. No remote repository, commit, push, Pages deployment, or real campaign sending was performed. Repository destination, visibility, and license remain open publication choices. Independent pilot power, repeated A/A calibration, external validation, and remote CI remain incomplete.
+No additional interpretation requires author confirmation. At this checkpoint, no remote repository, commit, push, Pages deployment, or real campaign sending had been performed. Repository destination, visibility, and license were open publication choices. Independent pilot power, repeated A/A calibration, external validation, and remote CI were incomplete at this checkpoint; subsequent publication and CI are recorded in the linked publication document.

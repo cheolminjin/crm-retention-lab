@@ -1,5 +1,7 @@
 # CRM Retention Lab
 
+[![Synthetic data checks](https://github.com/cheolminjin/crm-retention-lab/actions/workflows/checks.yml/badge.svg?branch=main)](https://github.com/cheolminjin/crm-retention-lab/actions/workflows/checks.yml)
+
 **After a first purchase, who should receive a reminder, a coupon, or no message?**
 
 A marketing planning portfolio for a fictional direct-to-consumer coffee retailer. The project combines repurchase analysis, a three-arm randomized experiment, and uplift modeling to evaluate customer-level CRM decisions under budget, contact, and side-effect constraints.
@@ -95,9 +97,11 @@ Open the [PDF](output/pdf/CRM_FINAL_REPORT.pdf), or download [the HTML report](r
 
 ### Rebuild from public aggregates
 
-Recorded environment: **Python 3.14.3**, **Plotly 7.1.0**, **scikit-learn 1.9.1**, **Quarto 1.11.9**. From the repository root:
+Recorded environment: **Python 3.14.3**, **Plotly 7.1.0**, **scikit-learn 1.9.1**, **Quarto 1.11.9**. Clone the repository and create an environment:
 
 ```bash
+git clone https://github.com/cheolminjin/crm-retention-lab.git
+cd crm-retention-lab
 python -m venv .venv
 ```
 
@@ -144,6 +148,8 @@ crm-retention-lab/
 
 Checks cover eligibility, temporal leakage, settlement, financial reconciliation, immutable inputs, hidden-state exclusion, model/selection separation, daily caps, and report consistency. Numerical methods are cross-checked against established libraries. See the [validation records](reports/STAGE_4_VALIDATION.md) and [English release verification](reports/ENGLISH_RELEASE_VALIDATION.md).
 
+The [first GitHub Actions run](https://github.com/cheolminjin/crm-retention-lab/actions/runs/42496278666) passed all five jobs: core checks on Windows/Linux with Python 3.10/3.14, plus a fresh Linux analysis installation with all 218 tests passing. CI also exercises data generation, validation, diagnosis, and three-arm comparison; it does not rebuild the full final policy evaluation or render HTML/PDF.
+
 - **Synthetic scope:** results do not demonstrate real customer behavior or real-brand profit improvement.
 - **Timing:** D+14 is fixed; this experiment cannot identify the best sending day.
 - **Individual effects:** one assigned treatment outcome is observed per customer. Model differences estimate conditional average effects, not observed individual causal effects.
@@ -167,4 +173,4 @@ Checks cover eligibility, temporal leakage, settlement, financial reconciliation
 
 Method and project references are in [REFERENCES.md](docs/REFERENCES.md). The README adapts presentation patterns from actual analytics portfolios and project templates; [comparison notes](docs/README_REFERENCE_NOTES.md) identify the sources.
 
-A project license has not been selected. No license grant is stated. Publishing configuration is documented in [GitHub preparation](docs/GITHUB_PREPARATION.md).
+A project license has not been selected. No license grant is stated. Repository visibility, included files, and CI scope are documented in [GitHub publication](docs/GITHUB_PREPARATION.md).

@@ -1,10 +1,12 @@
-# GitHub publication preparation
+# GitHub publication
 
-Only `crm-retention-lab` is prepared as an independent Git repository, on branch `codex/report-polish`. Public candidate files are staged. No remote repository, commit, or push has been created.
+Published on **2026-11-09 (Asia/Seoul)** as the public repository [cheolminjin/crm-retention-lab](https://github.com/cheolminjin/crm-retention-lab), with default branch `main`. Only this independent project repository was uploaded. The local branch `codex/report-polish` tracks `origin/main`.
+
+The initial commit is [`526cece163ec918ff68f795de2b829ba2b0558ba`](https://github.com/cheolminjin/crm-retention-lab/commit/526cece163ec918ff68f795de2b829ba2b0558ba). All **156 published file paths, Git blob hashes, and file modes** matched the local commit when checked against GitHub's recursive tree response; the response was not truncated.
 
 ## Included and excluded files
 
-Include source, configurations, tests, execution guides, selected synthetic samples, aggregate JSON, Quarto source, Plotly charts, final HTML/PDF, and validation manifests. `.gitignore` excludes full generated data, oracle state, customer-level predictions/allocations, fitted models, virtual environments, secret environment files, and rendering scratch files.
+The repository includes source, configurations, tests, execution guides, selected synthetic samples, aggregate JSON, Quarto source, Plotly charts, final HTML/PDF, and validation manifests. `.gitignore` excludes full generated data, oracle state, customer-level predictions/allocations, fitted models, virtual environments, secret environment files, and rendering scratch files.
 
 `.gitattributes` disables automatic line-ending conversion to preserve bytes used by aggregate, lock, and report hashes across platforms.
 
@@ -17,8 +19,13 @@ Include source, configurations, tests, execution guides, selected synthetic samp
 
 ## CI
 
-`.github/workflows/checks.yml` defines Windows/Linux standard-library checks and a locked analysis-environment job. Local tests have run; remote GitHub Actions has not. The referenced [actions/checkout v7](https://github.com/actions/checkout/tree/v7) and [actions/setup-python v7](https://github.com/actions/setup-python/tree/v7) tags were verified through the GitHub API.
+The [initial GitHub Actions run](https://github.com/cheolminjin/crm-retention-lab/actions/runs/42496278666) passed all five jobs for the initial commit:
 
-## Publication choices still open
+- Core checks on Windows and Linux, each with Python 3.10 and 3.14: unit/integration tests, smoke-data generation, and saved-data/hash validation.
+- Analysis on Linux / Python 3.14.10: fresh installation from `requirements-analysis.lock.txt`, **218 tests passed with no skips**, diagnostic data/chart export, and a three-arm comparison using a 600-customer smoke run.
 
-Repository URL/name, public/private visibility, and a project license remain undecided. No LICENSE file is present. Check local candidates with `git status --short` and `git diff --cached --stat`. Once those publication choices are specified, add the appropriate files before the first commit, remote connection, and push.
+The workflow is `.github/workflows/checks.yml`. It does not repeat the full final policy fit/selection/evaluation or Quarto/PDF rendering. Those results retain their separate local validation records. The [English release validation](../reports/ENGLISH_RELEASE_VALIDATION.md) and its JSON manifest describe the earlier pre-publication checkpoint; their README hash predates the publication links and CI badge.
+
+## License and deployment
+
+A project license remains undecided; no LICENSE file is present. GitHub Pages is not deployed. Publication does not send campaign messages.
